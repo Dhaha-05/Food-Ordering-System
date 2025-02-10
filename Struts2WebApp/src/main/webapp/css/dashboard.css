@@ -1,0 +1,53 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  padding: 20px;
+}
+
+.current-user {
+  font-weight: bold;
+}
+
+.food-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.food-card, .cart-card, .restaurant-card, .order-card{
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.food-card h3 {
+  margin-bottom: 10px;
+}
+
+.btn{
+    font-family: 'roboto', sans-serif;
+    background-color: lightblue;
+    text-align: center;
+    border:none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    align-items : flex-start;
+}
+
+.quantity-field{
+    width : 40px;
+}
+
+.header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}

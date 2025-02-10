@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href = "./css/error.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<form id="error-form">
+    <h1 id="status-code">${errorCode}</h1>
+    <h3 id="error-message">${errorMessage}</h3>
+
+</form>
+<script>
+  document.getElementById('status-code').innerText = window.location.search.split('=')[1];
+  document.getElementById('error-name').innerText = window.location.search.split('=')[2];
+</script>
+</body>
+</html>

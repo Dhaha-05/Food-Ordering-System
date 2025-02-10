@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Restaurant</title>
+    <link rel="stylesheet" href="css/add-restaurant.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<form>
+    <h2>Restaurant Details</h2>
+    <div>
+        <label for="restaurantName">Restaurant Name</label>
+        <input type="text" id="restaurantName" placeholder="Enter Restaurant name" required /><br>
+        <span id="restaurantNameError" class="error"></span>
+    </div>
+    <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" placeholder="Enter Location" required /><br>
+        <span id="locationError" class="error"></span>
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter Rating" /><br>
+        <span id="ratingError" class="error"></span>
+    </div>
+    <div>
+        <label for="panCard">PAN Card</label>
+        <input type="text" id="panCard" maxlength="10" placeholder="Enter Pan ID" required /><br>
+        <span id="panCardError" class="error"></span>
+    </div>
+    <div>
+        <label for="gstNo">GST Number</label>
+        <input type="text" id="gstNo" placeholder="Enter GST ID" required /><br>
+        <span id="gstNoError" class="error"></span>
+    </div>
+    <div>
+        <label for="bankAccount">Bank Account</label>
+        <input type="text" id="bankAccount" placeholder="Enter Account number" required /><br>
+        <span id="bankAccountError" class="error"></span>
+    </div>
+    <div>
+        <label for="fssaiLicense">FSSAI License</label>
+        <input type="text" id="fssaiLicense" placeholder="Enter FSSAI ID" required /><br>
+        <span id="fssaiLicenseError" class="error"></span>
+    </div>
+
+    <div class="btn">
+        <button type="submit">Add Restaurant</button>
+    </div>
+
+</form>
+<span id="commonError"></span>
+<a href="dashboard.html">Back to Home</a>
+<script src = "js/add-restaurant.js"></script>
+</body>
+</html>

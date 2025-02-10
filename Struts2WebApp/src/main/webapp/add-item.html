@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Item</title>
+    <link rel="stylesheet" href="css/add-item.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<form>
+    <h2>Restaurant Details</h2>
+    <div>
+        <label for="itemName">Item Name</label>
+        <input type="text" id="itemName" placeholder="Enter Item name" required /><br>
+        <span id="itemNameError" class="error"></span>
+    </div>
+    <div>
+
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value='Juices'>Juice</option>
+            <option value='Meals'>Meals</option>
+            <option value="Biriyani">Biriyani</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Starters">Starters</option>
+            <option value="Fast Food">Fast Food</option>
+            <option value="Salads">Salads</option>
+            <option value="Beverages">Beverages</option>
+        </select>
+        <span id="categoryError" class="error"></span>
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input type="text" id="price" placeholder="Enter item price" required /><br>
+        <span id="priceError" class="error"></span>
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter Rating" /><br>
+        <span id="ratingError" class="error"></span>
+    </div>
+    <div class="btn">
+        <button type="submit" id="add-item-btn">Add Item</button>
+    </div>
+
+</form>
+<span id="commonError"></span>
+<a href="dashboard.html">Cancel</a>
+<script src = "js/add-item.js"></script>
+</body>
+</html>

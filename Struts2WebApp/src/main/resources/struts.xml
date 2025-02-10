@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts
+Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="struts-default,json-default">
+        <action name="loginPage">
+            <result>/login.html</result>
+        </action>
+        <action name="registerPage">
+            <result>/register.html</result>
+        </action>
+        <action name="login" class="com.foodapp.action.LoginAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+<!--            <result name="success" type="json">-->
+<!--                <param name="root">userBean</param>-->
+<!--            </result>-->
+<!--            <result name="none">/login.html</result>-->
+        </action>
+
+        <action name="food" class="com.foodapp.action.FoodItemAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="register" class="com.foodapp.action.RegisterAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="logout" class="com.foodapp.action.LogoutAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="restaurants" class="com.foodapp.action.RestaurantAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="restaurantFood" class="com.foodapp.action.RestaurantItemAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="purchase" class="com.foodapp.action.PurchaseAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResposne</param>
+            </result>
+        </action>
+
+        <action name="newRestaurant" class="com.foodapp.action.NewRestaurantAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+<!--        <action name="restaurant" class="com.foodapp.action.RestaurantAction">-->
+<!--            <result name="success" type="json">-->
+<!--                <param name="root">jsonResponse</param>-->
+<!--            </result>-->
+<!--            <result name="none" type="json">-->
+<!--                <param name="root">jsonResponse</param>-->
+<!--            </result>-->
+<!--        </action>-->
+
+    </package>
+</struts>

@@ -1,0 +1,38 @@
+.error {
+    color: red;
+    margin-top: 5px;
+}
+.success {
+    color: green;
+    margin-top: 5px;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: white;
+   padding: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction : column;
+    justify-content:space-evenly;
+    align-items:center;
+    height : 100vh;
+}
+
+#submit-btn
+{
+    font-family: 'roboto', sans-serif;
+    background-color: lightblue;
+    text-align: center;
+    border:none;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
