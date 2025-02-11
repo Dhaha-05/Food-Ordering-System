@@ -14,8 +14,9 @@ public class FoodItemService {
         List<FoodItem> foodItems = new ArrayList<>();
         try{
             con = DbConnection.getConnection();
-            String sql = "SELECT i.id id, r.restaurantname name, i.name item, i.price price, i.category category, i.rating rating, i.offer offer, i.itemstatus status FROM item i JOIN restaurant r ON r.id = i.restaurantid;";
+            String sql = "SELECT i.id id, r.restaurantname name, i.name item, i.price price, i.category category, i.rating rating, i.offer offer, i.itemstatus status FROM item i JOIN restaurant r ON r.id = i.restaurantid where i.itemstatus = ?;";
             PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,"active");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -40,9 +41,10 @@ public class FoodItemService {
         List<FoodItem> foodItems = new ArrayList<>();
         try{
             con = DbConnection.getConnection();
-            String sql = "SELECT i.id id, r.restaurantname name, i.name item, i.price price, i.category category, i.rating rating, i.offer offer FROM item i JOIN restaurant r ON r.id = i.restaurantid WHERE r.id = ?;";
+            String sql = "SELECT i.id id, r.restaurantname name, i.name item, i.price price, i.category category, i.rating rating, i.offer offer FROM item i JOIN restaurant r ON r.id = i.restaurantid WHERE r.id = ? and i.itemstatus = ?;";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, restaurantId);
+            ps.setString(2,"active");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -64,6 +66,58 @@ public class FoodItemService {
 
     public boolean createItem(FoodItem foodItem)
     {
-        return false;
+        System.out.println("Food item entry : "+foodItem);
+        if(foodItem==null)
+        {
+            return false;
+        }
+        try{
+            con = DbConnection.getConnection();
+            String sql = "Insert into item (restaurantid, name, category, price, rating) values (?,?,?,?,?);";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,foodItem.getRestaurantid());
+            ps.setString(2,foodItem.getItemname());
+            ps.setString(3, foodItem.getCategory());
+            ps.setDouble(4,foodItem.getPrice());
+            ps.setDouble(5,foodItem.getRating());
+            int result = ps.executeUpdate();
+            if(result>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }catch (Exception e){
+            System.out.println("Exception while creating item : "+e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean removeItem(int foodId)
+    {
+        if(foodId<=0)
+        {
+            return false;
+        }
+        try {
+            con = DbConnection.getConnection();
+            String sql = "Update item set itemstatus = ? where id = ?; ";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,"inactive");
+            ps.setInt(2,foodId);
+            int result = ps.executeUpdate();
+            if(result>0)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }catch (Exception e){
+            System.out.println("Exception while removing an item : "+e.getMessage());
+            return false;
+        }
     }
 }

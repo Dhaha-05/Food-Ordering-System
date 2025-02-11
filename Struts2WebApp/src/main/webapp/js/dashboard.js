@@ -2,7 +2,7 @@ $(document).ready(function () {
     let userid = null;
     let username = null;
     let role = null;
-    //completed-----------------------------
+
     function parseCookie(cookie) {
         const cookies = cookie.split(';');
         const result = {};
@@ -14,7 +14,6 @@ $(document).ready(function () {
         return result;
     }
 
-    //completed-----------------------------------------------
     function fetchUserDetails() {
         let cookie = parseCookie(document.cookie)
         if(cookie.userid && cookie.userid!=="")
@@ -42,7 +41,7 @@ $(document).ready(function () {
         }
         updateUserUI(username);
     }
-    //completed--------------------------------------------------
+
     function updateUserUI(username) {
         if(role==="manager" && !!username)
         {
@@ -53,7 +52,7 @@ $(document).ready(function () {
                 <button id="foodItemsBtn" class="btn">Food Items</button>
                 <button id='viewCartBtn' class='btn' value='${userid}'>View Cart</button>
                 <button id='viewOrderBtn' class='btn' value='${userid}'>View Order</button>
-                <button id='addRestaurantBtn' class='btn' >Add Restaurant</button>
+                <button id='addRestaurantBtn' class='btn' >Control Center</button>
             `);
         }
         else if (username) {
@@ -78,7 +77,6 @@ $(document).ready(function () {
         }
     }
 
-    //completed --------------------------------------------------------------------
     function logout() {
         $.ajax({
             url: 'logout.action',
@@ -112,7 +110,7 @@ $(document).ready(function () {
     $(document).on('click','#addRestaurantBtn',()=>{
         if(role==="manager")
         {
-            window.location.href="add-restaurant.html";
+            window.location.href="manage-restaurant.html";
         }
     });
 
@@ -133,7 +131,6 @@ $(document).ready(function () {
     });
 
 
-    // completed ---------------------------------------------------------------
     $(document).on('click', '#viewCartBtn', () => {
         if (!userid && !username) {
             alert("Please log in to view your cart.");
@@ -167,7 +164,6 @@ $(document).ready(function () {
         });
     });
 
-    // completed ---------------------------------------------------------
     $(document).on('click', '#viewOrderBtn', () => {
         if (!userid) {
             alert("Please log in to view your orders.");
@@ -200,13 +196,12 @@ $(document).ready(function () {
         });
     });
 
-    // completed ------------------------------------------------------------------------
 
     $(document).on('click', '.view-items-btn', function () {
         const restaurantId = $(this).val();
         console.log(restaurantId);
         $.ajax({
-            url: `restaurantFood.action`,
+            url: 'restaurantFood.action',
             method: 'GET',
             data : {
                 restaurantId : restaurantId
@@ -227,7 +222,6 @@ $(document).ready(function () {
         });
     });
 
-    // completed ---------------------------------------------------------------
     $(document).on('click', '.order-btn', function () {
         const item = JSON.parse($(this).val());
 
@@ -250,6 +244,7 @@ $(document).ready(function () {
                 if (response.status === 'success') {
                     console.log('Order placed');
                     alert('Order placed successfully');
+                    window.location.reload();
                 } else {
                     console.log('Order failed!!!!!');
                 }
@@ -310,6 +305,9 @@ $(document).ready(function () {
         $.ajax({
             url: 'food.action',
             type: 'GET',
+            data:{
+                'action':'all-items'
+            },
             dataType: 'json',
             success: function (response) {
                 const foodItems = response.foodItems || [];
@@ -399,6 +397,9 @@ $(document).ready(function () {
         $.ajax({
             url: 'restaurants.action',
             type: 'GET',
+            data: {
+                action:'all-restaurant'
+            },
             dataType: 'json',
             success: function (res) {
                 console.log("response : ", res);

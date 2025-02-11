@@ -2,7 +2,6 @@ package com.foodapp.service;
 
 import com.foodapp.model.Restaurant;
 import com.util.connection.DbConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +16,9 @@ public class RestaurantService
         try
         {
             con = DbConnection.getConnection();
-            String sql = "select id,restaurantname,location,rating,managerid,restaurantstatus from restaurant";
+            String sql = "select id,restaurantname,location,rating,managerid,restaurantstatus from restaurant where restaurantstatus = ?;";
             ps = con.prepareStatement(sql);
+            ps.setString(1,"active");
             ResultSet rs = ps.executeQuery();
             if(!rs.isBeforeFirst()){
                 return null;
@@ -39,6 +39,32 @@ public class RestaurantService
             System.out.println("Exception : "+e.getMessage());
         }
         return list;
+    }
+
+    public List<Restaurant> getRestaurantByManagerId(int managerId) {
+        List<Restaurant> list = new ArrayList<>();
+        try {
+            con = DbConnection.getConnection();
+            String sql = "SELECT id, restaurantname, location, rating, managerid, restaurantstatus FROM restaurant WHERE managerid = ? and restaurantstatus = ? ;";
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, managerId);
+            ps.setString(2,"active");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Restaurant r = new Restaurant();
+                r.setRestaurantid(rs.getInt("id"));
+                r.setRestaurantname(rs.getString("restaurantname"));
+                r.setLocation(rs.getString("location"));
+                r.setRating(rs.getDouble("rating"));
+                r.setManagerid(rs.getInt("managerid"));
+                r.setRestaurantstatus(rs.getString("restaurantstatus"));
+                list.add(r);
+            }
+            return list;
+        } catch (Exception e) {
+            System.out.println("Exception in getRestaurantByManagerId: " + e.getMessage());
+            return null;
+        }
     }
 
     public boolean createRestaurant(Restaurant restaurant)
@@ -86,6 +112,32 @@ public class RestaurantService
         }catch (Exception e)
         {
             System.out.println("Exception in Restaurant Service : "+e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean removeRestaurant(int restaurantId){
+        if(restaurantId<=0)
+            return false;
+        try
+        {
+            con = DbConnection.getConnection();
+            String sql = "Update restaurant set restaurantstatus = ? where id = ?;";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,"inactive");
+            ps.setInt(2,restaurantId);
+            int result = ps.executeUpdate();
+            if(result>0)
+            {
+                sql="Update item set itemstatus = ? where restaurantid = ? ;";
+                ps = con.prepareStatement(sql);
+                ps.setString(1,"inactive");
+                ps.setInt(2,restaurantId);
+                result = ps.executeUpdate();
+            }
+            return result>0;
+        }catch(Exception e){
+            System.out.println("Exception while removing the restaurant : "+e.getMessage());
             return false;
         }
     }

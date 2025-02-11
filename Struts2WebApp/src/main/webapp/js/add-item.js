@@ -1,57 +1,89 @@
-$(document).ready(()=>{
-    $('form').submit((event)=>{
+$(document).ready(function () {
+    const managerId = getManagerIdFromCookie();
+
+    $(document).on('click','#control-btn',(event)=>{
         event.preventDefault();
+        window.location.href = "manage-restaurant.html";
+    });
 
-        let isValid = true;
-        $(".error").text("");
-
-        const itemName = $('#itemName').val().trim();
-        const nameRegex = /^[a-zA-Z\s]+$/;
-        if (itemName && itemName !== "" && !nameRegex.test(itemName)) {
-            $('#itemNameError').text("Enter valid item name").show();
-            isValid = false;
-        } else {
-            $('#itemNameError').hide();
-        }
-
-
-        const rating = $("#rating").val().trim();
-        const ratingValue = parseFloat(rating);
-        if (rating === "" || isNaN(ratingValue) || ratingValue < 1.0 || ratingValue > 5.0) {
-            $("#ratingError").text("Rating must be a decimal number between 1.0 and 5.0.").show();
-            isValid = false;
-        }
-        else{
-            $("#ratingError").hide();
-        }
-
-        const price = $('#price').val().trim();
-        const priceValue = parseFloat(price);
-        if(priceValue==="" || isNaN(priceValue) || priceValue<1.0){
-            $('#priceError').text("Price must greater than value 0").show();
-            isValid = false;
-        }
-        else{
-            $('#priceError').hide();
-        }
-
-        if(isValid)
-        {
-            const formData={
-
+    $.ajax({
+        url: 'restaurants.action',
+        method: 'GET',
+        data: {
+         'action': 'restaurant',
+         'restaurant.managerid': managerId
+         },
+        dataType: 'json',
+        success: function (response) {
+            if (response.status === 'success') {
+                const restaurants = response.restaurants || [];
+                displayRestaurants(restaurants);
+            } else {
+                $('#restaurant-list').html('<p>No restaurants found.</p>');
             }
-            $.ajax({
-                url:'',
-                method : 'POST',
-                dataType : 'json',
-                data:formData,
-                success: function(response){
-
-                },
-                error: function(xhr,status,error){
-                    console.log('Error happened : ',error);
-                }
-            });
+        },
+        error: function (xhr, status, error) {
+            console.log('Error fetching restaurants:', error);
         }
+    });
+
+    function getManagerIdFromCookie()
+    {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            const [key, value] = cookie.trim().split('=');
+            if (key === "userid") {
+                return atob(value);
+            }
+        }
+        return null;
+    }
+
+    function displayRestaurants(restaurants) {
+        const container = $('#restaurant-list');
+        container.empty();
+        restaurants.forEach(restaurant => {
+            const button = `<button class="select-restaurant-btn" value="${restaurant.restaurantid}">${restaurant.restaurantname}</button><br>`;
+            container.append(button);
+        });
+    }
+
+    $(document).on('click', '.select-restaurant-btn', function () {
+        const restaurantId = $(this).val();
+        $('#restaurant-id').val(restaurantId);
+        $('#add-item-form').show();
+    });
+
+    $('#add-item-form').on('submit', function (e) {
+        e.preventDefault();
+        const restaurantId = $('#restaurant-id').val();
+        const itemName = $('#item-name').val();
+        const category = $('#item-category').val();
+        const price = $('#item-price').val();
+        const rating = $('#item-rating').val();
+
+        $.ajax({
+            url: 'fooditem.action',
+            method: 'POST',
+            data: {
+                'item.restaurantid': restaurantId,
+                'item.itemname': itemName,
+                'item.category': category,
+                'item.price': price,
+                'item.rating': rating
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'success') {
+                    alert('Item added successfully!');
+                    window.location.href = 'manage-restaurant.html';
+                } else {
+                    console.log('Failed to add item');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log('Error adding item:', error);
+            }
+        });
     });
 });

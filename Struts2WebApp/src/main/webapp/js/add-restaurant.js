@@ -1,4 +1,10 @@
 $(document).ready(function () {
+
+    $(document).on('click','#control-btn',(event)=>{
+        event.preventDefault();
+        window.location.href = "manage-restaurant.html";
+    });
+
     $("form").submit(function (event) {
         event.preventDefault();
 

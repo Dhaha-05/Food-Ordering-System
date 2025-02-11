@@ -12,42 +12,32 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 100vh;
     gap: 20px;
 }
 
-h2 {
+h1,h2,h3 {
     text-align: center;
-    color: #007bff;
     margin-bottom: 20px;
 }
 
-form {
+h3{
+    color: #007bff;
+}
+
+#restaurant-list, #items-container {
     display: flex;
     flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input, select, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-}
-
-select{
-    font-size: medium;
+    max-width: 600px;
 }
 
 button {
     background-color: lightblue;
     color: black;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     font-size: medium;
     border-radius: 5px;
@@ -57,20 +47,24 @@ button {
 
 button:hover {
     background-color: #0056b3;
-    color:white;
-    font-size: medium;
+    color: white;
 }
 
-
-div#restaurant-list {
-    display: grid;
-    grid-auto-flow: column;
-    column-gap: 10px;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.item-card {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.item-card h3 {
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.btn {
+    margin-top: 20px;
 }

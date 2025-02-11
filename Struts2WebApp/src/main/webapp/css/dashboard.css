@@ -34,12 +34,14 @@ body {
 
 .btn{
     font-family: 'roboto', sans-serif;
+    font-size: medium;
     background-color: lightblue;
     text-align: center;
     border:none;
     padding: 10px 25px;
     border-radius: 10px;
     align-items : flex-start;
+    cursor: pointer;
 }
 
 .quantity-field{
@@ -50,4 +52,5 @@ body {
     display:flex;
     flex-direction:row;
     justify-content:space-between;
+    padding: 10px;
 }

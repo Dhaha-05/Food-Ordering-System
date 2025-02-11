@@ -83,6 +83,15 @@ Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
                 <param name="root">jsonResponse</param>
             </result>
         </action>
+
+        <action name="fooditem" class="com.foodapp.action.NewItemAction">
+            <result name="success" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+            <result name="none" type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
 <!--        <action name="restaurant" class="com.foodapp.action.RestaurantAction">-->
 <!--            <result name="success" type="json">-->
 <!--                <param name="root">jsonResponse</param>-->

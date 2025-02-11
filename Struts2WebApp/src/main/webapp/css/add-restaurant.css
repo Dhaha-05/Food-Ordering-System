@@ -38,3 +38,8 @@ form{
 .error,#commonError{
     color:red;
 }
+
+#control-btn{
+    background-color: red;
+    font-size: medium;
+}
