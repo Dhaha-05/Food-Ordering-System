@@ -79,6 +79,18 @@ public class FoodItemAction extends ActionSupport {
         }
     }
 
+    public String unauthorized() {
+        jsonResponse.put("status", "failed");
+        jsonResponse.put("message", "Unauthorized access");
+        return "unauthorized";
+    }
+
+    public String forbidden() {
+        jsonResponse.put("status", "failed");
+        jsonResponse.put("message", "Forbidden access");
+        return "forbidden";
+    }
+
     public Map<String, Object> getJsonResponse() {
         return jsonResponse;
     }

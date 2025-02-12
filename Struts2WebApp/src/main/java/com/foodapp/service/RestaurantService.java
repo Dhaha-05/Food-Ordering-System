@@ -141,4 +141,25 @@ public class RestaurantService
             return false;
         }
     }
+    public boolean verifyManager(int managerId)
+    {
+        try {
+            con = DbConnection.getConnection();
+            String sql = "select id from users where id = ? and (role = ? or role = ?); ";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,managerId);
+            ps.setString(2,"manager");
+            ps.setString(3,"admin");
+            ResultSet rs = ps.executeQuery();
+            if(!rs.next())
+            {
+                return false;
+            }
+            else
+                return true;
+        }catch (Exception e)
+        {
+            return false;
+        }
+    }
 }

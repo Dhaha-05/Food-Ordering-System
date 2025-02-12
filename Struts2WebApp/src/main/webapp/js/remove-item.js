@@ -1,31 +1,67 @@
 $(document).ready(function () {
-    const managerId = getManagerIdFromCookie();
+
+    function parseCookie(cookie) {
+        const cookies = cookie.split(';');
+        const result = {};
+
+        for (let i = 0; i < cookies.length; i++) {
+            const [key, value] = cookies[i].trim().split('=');
+            result[key] = value;
+        }
+        return result;
+    }
+    const cookie = parseCookie(document.cookie);
+    const managerId = atob(cookie['userid']);
+    const role = atob(cookie['role']).trim();
 
     $(document).on('click','#control-btn',(event)=>{
         event.preventDefault();
         window.location.href = "manage-restaurant.html";
     });
-
-    $.ajax({
-        url: 'restaurants.action',
-        method: 'GET',
-        data: {
-             'action': 'restaurant',
-             'restaurant.managerid': managerId 
+    if(role === "admin")
+    {
+        $.ajax({
+            url: 'restaurants.action',
+            method: 'GET',
+            data: {
+                 'action': 'all-restaurant'
+                },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'success') {
+                    const restaurants = response.restaurants || [];
+                    displayRestaurants(restaurants);
+                } else {
+                    $('#restaurant-list').html('<p>No restaurants found.</p>');
+                }
             },
-        dataType: 'json',
-        success: function (response) {
-            if (response.status === 'success') {
-                const restaurants = response.restaurants || [];
-                displayRestaurants(restaurants);
-            } else {
-                $('#restaurant-list').html('<p>No restaurants found.</p>');
+            error: function (xhr, status, error) {
+                console.log('Error fetching restaurants:', error);
             }
-        },
-        error: function (xhr, status, error) {
-            console.log('Error fetching restaurants:', error);
-        }
-    });
+        });
+    }
+    else if(role==="manager"){
+        $.ajax({
+            url: 'restaurants.action',
+            method: 'GET',
+            data: {
+                 'action': 'restaurant',
+                 'restaurant.managerid': managerId
+                },
+            dataType: 'json',
+            success: function (response) {
+                if (response.status === 'success') {
+                    const restaurants = response.restaurants || [];
+                    displayRestaurants(restaurants);
+                } else {
+                    $('#restaurant-list').html('<p>No restaurants found.</p>');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log('Error fetching restaurants:', error);
+            }
+        });
+    }
 
     function displayRestaurants(restaurants) {
         const container = $('#restaurant-list');
@@ -36,17 +72,6 @@ $(document).ready(function () {
         });
     }
 
-    function getManagerIdFromCookie()
-    {
-        const cookies = document.cookie.split(';');
-        for (let cookie of cookies) {
-            const [key, value] = cookie.trim().split('=');
-            if (key === "userid") {
-                return atob(value);
-            }
-        }
-        return null;
-    }
 
     $(document).on('click', '.select-restaurant-btn', function () {
         const restaurantId = $(this).val();
@@ -68,6 +93,7 @@ $(document).ready(function () {
                     displayItems(items);
                 } else {
                     $('#items-container').html('<p>No items found.</p>');
+                    $('#item-list').show();
                 }
             },
             error: function (xhr, status, error) {
@@ -79,6 +105,12 @@ $(document).ready(function () {
     function displayItems(items) {
         const container = $('#items-container');
         container.empty();
+        if(Array.isArray(items) && items.length === 0)
+        {
+            container.html('<p>No items found.</p>');
+            $('#item-list').show();
+            return;
+        }
         items.forEach(item => {
             const card = `
                 <div class="item-card">

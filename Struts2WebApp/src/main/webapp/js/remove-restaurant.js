@@ -9,7 +9,7 @@ $(document).ready(function () {
     $.ajax({
         url: 'restaurants.action',
         method: 'GET',
-        data: { action: 'restaurant', 'restaurant.managerid': managerId },
+        data: { action: 'all-restaurant', 'restaurant.managerid': managerId },
         dataType: 'json',
         success: function (response) {
             if (response.status === 'success') {

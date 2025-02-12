@@ -31,6 +31,12 @@ $(document).ready(function () {
             isValid = false;
         }
 
+        const managerId = $("#managerid").val().trim();
+        if (managerId === "" || !/^\d+$/.test(managerId)) {
+            $("#manageridError").text("Manager ID must be a numeric value.");
+            isValid = false;
+        }
+
         const panCard = $("#panCard").val().trim();
         if (panCard === "") {
             $("#panCardError").text("PAN Card is required.");
@@ -60,11 +66,11 @@ $(document).ready(function () {
                 'restaurant.restaurantname': restaurantName,
                 'restaurant.location': location,
                 'restaurant.rating': ratingValue,
+                'restaurant.managerid': managerId,
                 'restaurant.pancard': panCard,
                 'restaurant.gstno': gstNo,
                 'restaurant.bankaccount': bankAccount,
-                'restaurant.fssailicense': fssaiLicense,
-                'restaurant.userid':getUserIdFromCookie()
+                'restaurant.fssailicense': fssaiLicense
             };
 
             $.ajax({
@@ -78,8 +84,11 @@ $(document).ready(function () {
                         console.log(response.message);
                         window.location.href = "dashboard.html";
                     } else {
+                        if(response.managerError)
+                        {
+                            $("#manageridError").text(response.managerError);
+                        }
                         console.log(response.message);
-                        //window.location.href = "dashboard.html";
                     }
                 },
                 error: function (xhr, status, error) {
@@ -90,14 +99,4 @@ $(document).ready(function () {
         }
     });
 
-    function getUserIdFromCookie() {
-        const cookies = document.cookie.split(';');
-        for (let cookie of cookies) {
-            const [key, value] = cookie.trim().split('=');
-            if (key === "userid") {
-                return atob(value);
-            }
-        }
-        return null;
-    }
 });

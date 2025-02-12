@@ -43,7 +43,7 @@ $(document).ready(function () {
     }
 
     function updateUserUI(username) {
-        if(role==="manager" && !!username)
+        if((role==="admin" || role==="manager") && !!username)
         {
             $("#currentUser").html(`Welcome, ${username} <button id='logout-btn' class='btn'>Logout</button>`);
             $("#btn-grp").empty();
@@ -79,26 +79,15 @@ $(document).ready(function () {
 
     function logout() {
         $.ajax({
-            url: 'logout.action',
+            url: 'http://localhost:8085/Struts2WebApp/logout',
             method: 'POST',
-            dataType:'json',
             success: function (response) {
-                if(response.status==='success')
-                {
-                    console.log("Logged out successfully");
-                    userid = null;
-                    username = null;
-                    role = null;
-                    updateUserUI(username);
-                    fetchFoodItems();
-                }
-                else
-                {
-                    console.log("logout failed");
-                }
+                console.log("Logout Successfully");
+                window.location.reload();
             },
             error: function (xhr, status, error) {
                 console.log("Error logging out:", error);
+                alert("Logout failed!!!");
             }
         });
     }
@@ -108,7 +97,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click','#addRestaurantBtn',()=>{
-        if(role==="manager")
+        if(role==="manager" || role === "admin")
         {
             window.location.href="manage-restaurant.html";
         }
@@ -255,10 +244,6 @@ $(document).ready(function () {
         });
     });
 
-
-
-    //completed ---------------------------------------------------------------
-
     $(document).on('click', '.cart-btn', function () {
         if (!userid && !username) {
             alert("Please log in to add items to your cart.");
@@ -300,7 +285,6 @@ $(document).ready(function () {
         });
     });
 
-    //completed------------------------------------------------------------
     function fetchFoodItems() {
         $.ajax({
             url: 'food.action',
@@ -319,7 +303,6 @@ $(document).ready(function () {
         });
     }
 
-    // completed ----------------------------------------------------------------
     function displayCartItems(items, isLoggedIn) {
         const container = $('#foodContainer');
         container.empty();
@@ -343,7 +326,6 @@ $(document).ready(function () {
         });
     }
 
-    // ongoing ===========================================================
     function displayOrderItems(items, isLoggedIn) {
         const container = $('#foodContainer');
         container.empty();
@@ -366,7 +348,6 @@ $(document).ready(function () {
         });
     }
 
-    //completed ------------------------------------------
     function displayFoodItems(items, isLoggedIn) {
         const container = $("#foodContainer");
         container.empty();
@@ -392,7 +373,6 @@ $(document).ready(function () {
         });
     }
 
-    // completed -----------------------------------------------------
     function fetchRestaurant() {
         $.ajax({
             url: 'restaurants.action',
@@ -421,7 +401,7 @@ $(document).ready(function () {
             }
         });
     }
-    // completed ---------------------------------------------
+
     function displayRestaurants(restaurants) {
         if (!Array.isArray(restaurants)) {
             console.log("Invalid data format for restaurants");

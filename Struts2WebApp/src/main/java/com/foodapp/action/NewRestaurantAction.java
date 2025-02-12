@@ -23,19 +23,11 @@ public class NewRestaurantAction extends ActionSupport implements SessionAware, 
     private boolean hasPermission = false;
     public String execute()
     {
-        if(session!=null)
+        RestaurantService restaurantService = new RestaurantService();
+        hasPermission=restaurantService.verifyManager(restaurant.getManagerid());
+        if(hasPermission)
         {
-            Cookie[] cookies = request.getCookies();
-            if(cookies!=null)
-            {
-                hasPermission = userAuthentication(session,cookies);
-                if(hasPermission)
-                {
-                    RestaurantService restaurantService = new RestaurantService();
-                    restaurant.setManagerid(Integer.parseInt(EncryptDecrypt.decrypt(String.valueOf(session.get("userid")))));
-                    hasPermission= restaurantService.createRestaurant(restaurant);
-                }
-            }
+           hasPermission = restaurantService.createRestaurant(restaurant);
         }
         if(hasPermission){
             jsonResponse.put("status","success");
@@ -45,6 +37,7 @@ public class NewRestaurantAction extends ActionSupport implements SessionAware, 
         else {
             jsonResponse.put("status","failed");
             jsonResponse.put("message","Access Denied, 403 Forbidden access");
+            jsonResponse.put("managerError","Enter valid Manager id");
             return NONE;
         }
     }
@@ -74,25 +67,5 @@ public class NewRestaurantAction extends ActionSupport implements SessionAware, 
     @Override
     public void setSession(Map<String, Object> map) {
         this.session = map;
-    }
-
-
-    private boolean userAuthentication(Map<String,Object> session, Cookie[] cookies)
-    {
-        boolean isAuthorized = true;
-        for(Cookie cookie:cookies)
-        {
-            if("userid".equals(cookie.getName()) || "role".equals(cookie.getName()) || "password".equals(cookie.getName()) || "name".equals(cookie.getName()))
-            {
-                System.out.println("Session => "+cookie.getName()+" : "+session.get(cookie.getName()));
-                System.out.println("Cookie => "+cookie.getName()+" : "+cookie.getValue());
-                isAuthorized = session.get(cookie.getName()).equals(cookie.getValue());
-                if(!isAuthorized)
-                {
-                    return isAuthorized;
-                }
-            }
-        }
-        return isAuthorized;
     }
 }

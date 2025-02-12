@@ -3,6 +3,7 @@ package com.foodapp.action;
 import com.foodapp.model.FoodItem;
 import com.foodapp.service.FoodItemService;
 import com.opensymphony.xwork2.ActionSupport;
+import com.util.cipher.EncryptDecrypt;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
@@ -22,21 +23,12 @@ public class NewItemAction extends ActionSupport implements SessionAware, Servle
 
     public String execute()
     {
-        boolean hasPermission =false;
-        if(session!=null)
-        {
-            Cookie[] cookies = request.getCookies();
-            if(cookies!=null)
-            {
-                hasPermission = userAuthentication(session,cookies);
-                if(hasPermission)
-                {
-                    FoodItemService foodItemService = new FoodItemService();
-                    hasPermission = foodItemService.createItem(item);
-                }
-            }
-        }
-        if(hasPermission){
+
+        FoodItemService foodItemService = new FoodItemService();
+        System.out.println(item);
+        boolean addItem = foodItemService.createItem(item);
+
+        if(addItem){
             jsonResponse.put("status","success");
             jsonResponse.put("message","OK");
             return SUCCESS;
@@ -79,22 +71,26 @@ public class NewItemAction extends ActionSupport implements SessionAware, Servle
         this.session = map;
     }
 
-    private boolean userAuthentication(Map<String,Object> session, Cookie[] cookies)
-    {
-        boolean isAuthorized = true;
-        for(Cookie cookie:cookies)
-        {
-            if("userid".equals(cookie.getName()) || "role".equals(cookie.getName()) || "password".equals(cookie.getName()) || "name".equals(cookie.getName()))
-            {
-//                System.out.println("Session => "+cookie.getName()+" : "+session.get(cookie.getName()));
-//                System.out.println("Cookie => "+cookie.getName()+" : "+cookie.getValue());
-                isAuthorized = session.get(cookie.getName()).equals(cookie.getValue());
-                if(!isAuthorized)
-                {
-                    return isAuthorized;
-                }
-            }
-        }
-        return isAuthorized;
-    }
+//    private boolean userAuthentication(Map<String,Object> session, Cookie[] cookies)
+//    {
+//        boolean isAuthorized = true;
+//        for(Cookie cookie:cookies)
+//        {
+//            if("userid".equals(cookie.getName()) || "role".equals(cookie.getName()) || "password".equals(cookie.getName()) || "name".equals(cookie.getName()))
+//            {
+////                System.out.println("Session => "+cookie.getName()+" : "+session.get(cookie.getName()));
+////                System.out.println("Cookie => "+cookie.getName()+" : "+cookie.getValue());
+//                isAuthorized = session.get(cookie.getName()).equals(cookie.getValue());
+//                if(!isAuthorized)
+//                {
+//                    return isAuthorized;
+//                }
+//            }
+//            if("role".equals(cookie.getName()) && (!"manager".equals(EncryptDecrypt.decrypt(cookie.getValue())) || !"admin".equals(EncryptDecrypt.decrypt(cookie.getValue()))))
+//            {
+//                return false;
+//            }
+//        }
+//        return isAuthorized;
+//    }
 }

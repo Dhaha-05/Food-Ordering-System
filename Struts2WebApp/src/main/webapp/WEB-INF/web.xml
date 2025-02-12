@@ -3,13 +3,32 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>com.foodapp.controller.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
   <filter>
-    <filter-name>struts2Web</filter-name>
+    <filter-name>urlValidate</filter-name>
+    <filter-class>com.foodapp.filter.UrlValidation</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>urlValidate</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>struts2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
   </filter>
   <filter-mapping>
-    <filter-name>struts2Web</filter-name>
-    <url-pattern>/*</url-pattern>
+    <filter-name>struts2</filter-name>
+    <url-pattern>*.action</url-pattern>
+    <url-pattern>/index.jsp</url-pattern>
+    <url-pattern>/loginPage</url-pattern>
+    <url-pattern>/registerPage</url-pattern>
   </filter-mapping>
 </web-app>
 

@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts
 Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
-
 <struts>
     <package name="default" namespace="/" extends="struts-default,json-default">
+        <interceptors>
+            <interceptor name="authInterceptor" class="com.foodapp.interceptor.AuthInterceptor"/>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="authInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="authStack"/>
+
+        <global-results>
+            <result name="unauthorized">/error.jsp</result>
+            <result name="forbidden">/error.jsp</result>
+        </global-results>
+<!--        <interceptors>-->
+<!--            <interceptor name="authInterceptor" class="com.foodapp.interceptor.AuthInterceptor"/>-->
+<!--            <interceptor-stack name="authStack">-->
+<!--                <interceptor-ref name="authInterceptor"/>-->
+<!--                <interceptor-ref name="defaultStack"/>-->
+<!--            </interceptor-stack>-->
+<!--        </interceptors>-->
+<!--        -->
+<!--        <default-interceptor-ref name="authStack"/>-->
+
+<!--        <global-results>-->
+<!--            <result name="login">/login.html</result>-->
+<!--            <result name="unauthorized">/error.jsp</result>-->
+<!--        </global-results>-->
         <action name="loginPage">
             <result>/login.html</result>
         </action>
@@ -22,7 +49,6 @@ Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <!--            </result>-->
 <!--            <result name="none">/login.html</result>-->
         </action>
-
         <action name="food" class="com.foodapp.action.FoodItemAction">
             <result name="success" type="json">
                 <param name="root">jsonResponse</param>

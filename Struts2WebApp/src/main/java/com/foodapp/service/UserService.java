@@ -29,17 +29,22 @@ public class UserService
                 }
                 if(rs.next())
                 {
-                    userBean.setUserid(rs.getInt("id"));
-                    userBean.setUsername(rs.getString("username"));
-                    userBean.setFullname(rs.getString("fullname"));
-                    userBean.setEmail(rs.getString("email"));
-                    userBean.setMobileno(rs.getString("mobileno"));
-                    userBean.setPassword(rs.getString("password"));
-                    userBean.setRole(rs.getString("role"));
-                    rs.close();
-                    ps.close();
-                    System.out.println(userBean);
-                    return userBean;
+                    if(userBean.getUsername().equals(rs.getString("username").trim()) && userBean.getPassword().equals(rs.getString("password").trim())) {
+                        userBean.setUserid(rs.getInt("id"));
+                        userBean.setUsername(rs.getString("username"));
+                        userBean.setFullname(rs.getString("fullname"));
+                        userBean.setEmail(rs.getString("email"));
+                        userBean.setMobileno(rs.getString("mobileno"));
+                        userBean.setPassword(rs.getString("password"));
+                        userBean.setRole(rs.getString("role"));
+                        rs.close();
+                        ps.close();
+                        System.out.println(userBean);
+                        return userBean;
+                    }
+                    else {
+                        return null;
+                    }
                 }
             }catch(Exception e)
             {
