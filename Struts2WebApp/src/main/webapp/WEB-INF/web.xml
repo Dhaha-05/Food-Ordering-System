@@ -30,5 +30,8 @@
     <url-pattern>/loginPage</url-pattern>
     <url-pattern>/registerPage</url-pattern>
   </filter-mapping>
+  <session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+  </session-config>
 </web-app>
 

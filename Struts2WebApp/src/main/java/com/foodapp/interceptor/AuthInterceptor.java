@@ -1,10 +1,10 @@
 package com.foodapp.interceptor;
 
+import com.foodapp.filter.UrlValidation;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import com.util.cipher.EncryptDecrypt;
 import org.apache.struts2.ServletActionContext;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +14,8 @@ import java.util.Objects;
 
 public class AuthInterceptor extends AbstractInterceptor {
 
-    private Map<String, Object> jsonResponse;
-
+    private Map<String, Object> jsonResponse = new HashMap<>();;
+    private boolean isAuthenticated;
     public Map<String, Object> getJsonResponse() {
         return jsonResponse;
     }
@@ -26,7 +26,6 @@ public class AuthInterceptor extends AbstractInterceptor {
 
     @Override
     public void init() {
-        jsonResponse = new HashMap<>();
         super.init();
     }
 
@@ -37,6 +36,7 @@ public class AuthInterceptor extends AbstractInterceptor {
 
     @Override
     public String intercept(ActionInvocation invocation) throws Exception {
+        isAuthenticated = UrlValidation.isAuthenticatedUser();
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         Map<String, Object> session = invocation.getInvocationContext().getSession();
@@ -44,122 +44,108 @@ public class AuthInterceptor extends AbstractInterceptor {
         String actionName = invocation.getProxy().getActionName();
         System.out.println("Action name : " + actionName);
 //        String method = request.getMethod();
-
-        if (actionName.equals("loginPage") || actionName.equals("registerPage") || actionName.equals("login") || actionName.equals("register") || actionName.equals("logout") || actionName.equals("restaurantFood")) {
-            return invocation.invoke();
-        }
-        if (actionName.equals("food")) {
-            String action = request.getParameter("action");
-            if (action != null && (action.equals("all-items") || action.equals("restaurant-items"))) {
+        String action = null;
+        switch(actionName)
+        {
+            case "loginPage":
                 return invocation.invoke();
-            }
-        }
-        if (actionName.equals("restaurants")) {
-            String action = request.getParameter("action");
-            if (action != null && (action.equals("all-restaurant") || action.equals("restaurant"))) {
+            case "registerPage":
                 return invocation.invoke();
-            }
-        }
+            case "login":
+                return invocation.invoke();
+            case "register":
+                return invocation.invoke();
+            case "logout":
+                return invocation.invoke();
+            case "restaurantFood":
+                return invocation.invoke();
+            case "food":
+                action = request.getParameter("action");
+                if (action != null && (action.equals("all-items") || action.equals("restaurant-items"))) {
+                    return invocation.invoke();
+                }
+                else if (action != null && action.equals("remove-item")) {
+                    if (!isAuthenticated) {
+                        errorPage(request,response,401,"Unauthorized access");
+                        return "unauthorized";
+                    } else if (!UrlValidation.hasManagerAccess()) {
+                        errorPage(request,response,403,"Access Denied");
+                        return "forbidden";
+                    }
+                    else {
+                        invocation.invoke();
+                    }
+                }
+                else
+                {
+                    errorPage(request,response,404,"Page Not Found");
+                    return "notFound";
+                }
 
-        if (session == null || session.isEmpty()) {
-            System.out.println("Session is Empty");
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            request.setAttribute("errorStatus", 401);
-            request.setAttribute("errorMessage", "Unauthorized access");
-            return "unauthorized";
-        }
+            case "restaurants":
+                action = request.getParameter("action");
+                if (action != null && (action.equals("all-restaurant") || action.equals("restaurant"))) {
+                    return invocation.invoke();
+                }else if (action != null && action.equals("remove-restaurant")) {
+                    if (!isAuthenticated) {
+                        errorPage(request,response,401,"Unauthorized access");
+                        return "unauthorized";
+                    } else if (!UrlValidation.hasAdminAccess()) {
+                        errorPage(request,response,403,"Access Denied");
+                        return "forbidden";
+                    }
+                    else{
+                        return invocation.invoke();
+                    }
+                }
+                else
+                {
+                    errorPage(request,response,404,"Page Not Found");
+                    return "notFound";
+                }
 
-        Cookie[] cookies = request.getCookies();
-        if (cookies == null) {
-            System.out.println("Cookies null unauthorized");
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            request.setAttribute("errorStatus", 401);
-            request.setAttribute("errorMessage", "Unauthorized access");
-            return "unauthorized";
-        }
-
-        String username = null;
-        String role = null;
-        String password = null;
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("name")) {
-                username = EncryptDecrypt.decrypt(cookie.getValue());
-            }
-            if (cookie.getName().equals("role")) {
-                role = EncryptDecrypt.decrypt(cookie.getValue());
-            }
-            if (cookie.getName().equals("password")) {
-                password = cookie.getValue();
-            }
-        }
-
-        if (username == null || role == null) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            request.setAttribute("errorStatus", 401);
-            request.setAttribute("errorMessage", "Unauthorized access");
-            return "unauthorized";
-        }
-
-        if (actionName.equals("food")) {
-            String action = request.getParameter("action");
-            if (action != null && action.equals("remove-item")) {
-                if (!username.equals(EncryptDecrypt.decrypt(String.valueOf(session.get("name")))) && !Objects.equals(password, String.valueOf(session.get("password")))) {
-                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                    request.setAttribute("errorStatus", 401);
-                    request.setAttribute("errorMessage", "Unauthorized access");
+            case "purchase":
+                if(!isAuthenticated)
+                {
+                    errorPage(request,response,401,"Unauthorized access");
                     return "unauthorized";
-                } else if (!role.equals("admin") && !role.equals("manager")) {
-                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                    request.setAttribute("errorStatus", 403);
-                    request.setAttribute("errorMessage", "Access Denied");
+                }
+                else
+                {
+                    return invocation.invoke();
+                }
+            case "foodItem":
+                if (!isAuthenticated) {
+                    errorPage(request,response,401,"Unauthorized access");
+                    return "unauthorized";
+                } else if (!UrlValidation.hasManagerAccess()) {
+                    errorPage(request,response,403,"Access Denied");
                     return "forbidden";
                 }
-            }
-        } else if (actionName.equals("restaurants")) {
-            String action = request.getParameter("action");
-            if (action != null && action.equals("remove-restaurant")) {
-                if (!username.equals(EncryptDecrypt.decrypt(String.valueOf(session.get("name")))) && !Objects.equals(password, session.get("password"))) {
-                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                    request.setAttribute("errorStatus", 401);
-                    request.setAttribute("errorMessage", "Unauthorized access");
+                else
+                {
+                    invocation.invoke();
+                }
+            case "newRestaurant":
+                if (!isAuthenticated) {
+                    System.out.println("New Restaurant unauthorized");
+                    errorPage(request,response,401,"Unauthorized access");
                     return "unauthorized";
-                } else if (!role.equals("admin")) {
-                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                    request.setAttribute("errorStatus", 403);
-                    request.setAttribute("errorMessage", "Access Denied");
+                } else if (!UrlValidation.hasAdminAccess()) {
+                    errorPage(request,response,403,"Access Denied");
                     return "forbidden";
                 }
-            }
-        } else if (actionName.equals("foodItem")) {
-            if (!username.equals(EncryptDecrypt.decrypt(String.valueOf(session.get("name")))) && !Objects.equals(password, String.valueOf(session.get("password")))) {
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                request.setAttribute("errorStatus", 401);
-                request.setAttribute("errorMessage", "Unauthorized access");
-                return "unauthorized";
-            } else if (!role.equals("admin") && !role.equals("manager")) {
-                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                request.setAttribute("errorStatus", 403);
-                request.setAttribute("errorMessage", "Access Denied");
-                return "forbidden";
-            }
-        } else if (actionName.equals("newRestaurant")) {
-            if (!username.equals(EncryptDecrypt.decrypt(String.valueOf(session.get("name")))) && !Objects.equals(password, String.valueOf(session.get("password")))) {
-                System.out.println("New Restaurant unauthorized");
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                request.setAttribute("errorStatus", 401);
-                request.setAttribute("errorMessage", "Unauthorized access");
-                return "unauthorized";
-            } else if (!role.equals("admin")) {
-                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                request.setAttribute("errorStatus", 403);
-                request.setAttribute("errorMessage", "Access Denied");
-                return "forbidden";
-            }
+            default:
+                errorPage(request,response,404,"File Not Found");
+                return "notFound";
         }
-
-        return invocation.invoke();
     }
-
+    private void errorPage(HttpServletRequest request,HttpServletResponse response , int code , String message)
+    {
+        response.setStatus(code);
+        request.setAttribute("errorStatus", code);
+        request.setAttribute("errorMessage", message);
+    }
 //    private void pageError(String status, int statusCode, String message) {
 //        jsonResponse.clear();
 //        jsonResponse.put("status", status);

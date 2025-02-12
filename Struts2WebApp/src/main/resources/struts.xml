@@ -16,6 +16,7 @@ Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
         <global-results>
             <result name="unauthorized">/error.jsp</result>
             <result name="forbidden">/error.jsp</result>
+            <result name="notFound">/error.jsp</result>
         </global-results>
 <!--        <interceptors>-->
 <!--            <interceptor name="authInterceptor" class="com.foodapp.interceptor.AuthInterceptor"/>-->

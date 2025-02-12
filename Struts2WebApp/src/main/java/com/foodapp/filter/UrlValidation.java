@@ -1,7 +1,6 @@
 package com.foodapp.filter;
 
 import com.util.cipher.EncryptDecrypt;
-
 import javax.servlet.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +13,9 @@ import java.util.Set;
 
 public class UrlValidation implements Filter
 {
+    private static ThreadLocal<Boolean> isAuthenticated = ThreadLocal.withInitial(()->false);
+    private static ThreadLocal<Boolean> isManager = ThreadLocal.withInitial(()->false);
+    private static ThreadLocal<Boolean> isAdmin = ThreadLocal.withInitial(()->false);
     private String username = null;
     private String password = null;
     private String role = null;
@@ -27,11 +29,20 @@ public class UrlValidation implements Filter
         HttpSession session = req.getSession(false);
         Cookie[] cookies = req.getCookies();
         String path = req.getRequestURI().substring(req.getContextPath().length());
-        System.out.println("Path : "+path);
-        if(path.equals("/login.html") || path.equals("/register.html"))
+        System.out.println("-------------------------------------------------------------Path : "+path+"----------------------------");
+        isAuthenticated.set(authUser(session,cookies));
+        if(isAuthenticated.get())
+        {
+            isManager.set(hasManagerPermission());
+            isAdmin.set(hasAdminPermission());
+        }
+        System.out.println("Authenticated : "+isAuthenticated.get());
+        System.out.println("Has Manager Access : "+isManager.get());
+        System.out.println("Has Admin Access : "+isAdmin.get());
+        if(path.equals("/login.html") || path.equals("/register.html") || path.equals("/loginPage") || path.equals("/registerPage"))
         {
             System.out.println("Login or Register page called");
-            if(session!=null && cookies!=null)
+            if(isAuthenticated.get())
             {
                 System.out.println("Some user still logged in and try to login or register operation");
                 res.sendRedirect(req.getContextPath()+"/dashboard.html");
@@ -45,6 +56,7 @@ public class UrlValidation implements Filter
         else if(path.equals("/dashboard.html") || path.endsWith(".action"))
         {
             chain.doFilter(request,response);
+            return;
         }
         else if((path.startsWith("/js/") || path.startsWith("/css/"))){
             if(url.contains(path))
@@ -58,27 +70,36 @@ public class UrlValidation implements Filter
         }
         else if(path.equals("/manage-restaurant.html") || path.equals("/add-item.html") || path.equals("/remove-item.html"))
         {
-            authUser(session,cookies);
-            if(hasManagerPermission())
-                chain.doFilter(request,response);
-            else
+            if(isManager.get()) {
+                chain.doFilter(request, response);
+                return;
+            }
+            else {
                 res.setStatus(403);
+                return;
+            }
         }
         else if(path.equals("/add-restaurant.html") || path.equals("/remove-restaurant.html"))
         {
-            authUser(session,cookies);
-            if(hasAdminPermission())
+            if(isAdmin.get()) {
                 chain.doFilter(request, response);
-            else
+                return;
+            }
+            else {
                 res.setStatus(403);
+                return;
+            }
         }
         else if(url.contains(path))
         {
             chain.doFilter(request,response);
+            return;
         }
         else {
             res.setStatus(404);
+            return;
         }
+
     }
 
     private boolean authUser(HttpSession session, Cookie[] cookies)
@@ -99,6 +120,8 @@ public class UrlValidation implements Filter
                 role = cookie.getValue();
             }
         }
+        if(username==null || password==null || role==null)
+            return false;
         if(username.equals(session.getAttribute("name")) && password.equals(session.getAttribute("password")) && role.equals(session.getAttribute("role")))
         {
             return true;
@@ -114,5 +137,19 @@ public class UrlValidation implements Filter
     private boolean hasAdminPermission()
     {
         return role.equals(EncryptDecrypt.encrypt("admin"));
+    }
+
+    public static boolean isAuthenticatedUser()
+    {
+        return isAuthenticated.get();
+    }
+
+    public static boolean hasManagerAccess()
+    {
+        return isManager.get();
+    }
+    public static boolean hasAdminAccess()
+    {
+        return isAdmin.get();
     }
 }
