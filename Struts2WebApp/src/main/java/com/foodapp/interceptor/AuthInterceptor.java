@@ -1,5 +1,6 @@
 package com.foodapp.interceptor;
 
+import com.foodapp.filter.AuthFilter;
 import com.foodapp.filter.UrlValidation;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
@@ -36,7 +37,7 @@ public class AuthInterceptor extends AbstractInterceptor {
 
     @Override
     public String intercept(ActionInvocation invocation) throws Exception {
-        isAuthenticated = UrlValidation.isAuthenticatedUser();
+        isAuthenticated = AuthFilter.isAuthenticatedUser();
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         Map<String, Object> session = invocation.getInvocationContext().getSession();
@@ -68,7 +69,7 @@ public class AuthInterceptor extends AbstractInterceptor {
                     if (!isAuthenticated) {
                         errorPage(request,response,401,"Unauthorized access");
                         return "unauthorized";
-                    } else if (!UrlValidation.hasManagerAccess()) {
+                    } else if (!AuthFilter.hasManagerAccess()) {
                         errorPage(request,response,403,"Access Denied");
                         return "forbidden";
                     }
@@ -90,7 +91,7 @@ public class AuthInterceptor extends AbstractInterceptor {
                     if (!isAuthenticated) {
                         errorPage(request,response,401,"Unauthorized access");
                         return "unauthorized";
-                    } else if (!UrlValidation.hasAdminAccess()) {
+                    } else if (!AuthFilter.hasAdminAccess()) {
                         errorPage(request,response,403,"Access Denied");
                         return "forbidden";
                     }
@@ -118,7 +119,7 @@ public class AuthInterceptor extends AbstractInterceptor {
                 if (!isAuthenticated) {
                     errorPage(request,response,401,"Unauthorized access");
                     return "unauthorized";
-                } else if (!UrlValidation.hasManagerAccess()) {
+                } else if (!AuthFilter.hasManagerAccess()) {
                     errorPage(request,response,403,"Access Denied");
                     return "forbidden";
                 }
@@ -131,7 +132,7 @@ public class AuthInterceptor extends AbstractInterceptor {
                     System.out.println("New Restaurant unauthorized");
                     errorPage(request,response,401,"Unauthorized access");
                     return "unauthorized";
-                } else if (!UrlValidation.hasAdminAccess()) {
+                } else if (!AuthFilter.hasAdminAccess()) {
                     errorPage(request,response,403,"Access Denied");
                     return "forbidden";
                 }

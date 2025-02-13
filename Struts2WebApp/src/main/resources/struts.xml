@@ -5,8 +5,10 @@ Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
     <package name="default" namespace="/" extends="struts-default,json-default">
         <interceptors>
             <interceptor name="authInterceptor" class="com.foodapp.interceptor.AuthInterceptor"/>
+            <interceptor name="validateInterceptor" class="com.foodapp.interceptor.FormValidationInterceptor"/>
             <interceptor-stack name="authStack">
                 <interceptor-ref name="authInterceptor"/>
+                <interceptor-ref name="validateInterceptor"/>
                 <interceptor-ref name="defaultStack"/>
             </interceptor-stack>
         </interceptors>

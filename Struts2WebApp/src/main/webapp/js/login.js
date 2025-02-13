@@ -10,12 +10,10 @@ $(document).ready(function () {
         $.ajax({
             url: 'login.action',
             type: 'POST',
-            data: {
-                "userBean.username": $('#username').val(),
-                "userBean.password": btoa($('#password').val())
-            },
+            data: userData,
             dataType:'json',
             success: function (response) {
+                console.log("Response : ",response);
                 if (response.status === "success") {
                     console.log("User Data:"+ response.message);
                     window.location.href = 'dashboard.html';

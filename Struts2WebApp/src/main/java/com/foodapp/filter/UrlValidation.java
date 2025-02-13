@@ -13,12 +13,6 @@ import java.util.Set;
 
 public class UrlValidation implements Filter
 {
-    private static ThreadLocal<Boolean> isAuthenticated = ThreadLocal.withInitial(()->false);
-    private static ThreadLocal<Boolean> isManager = ThreadLocal.withInitial(()->false);
-    private static ThreadLocal<Boolean> isAdmin = ThreadLocal.withInitial(()->false);
-    private String username = null;
-    private String password = null;
-    private String role = null;
     private Set<String> url = new HashSet<>();
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
@@ -30,19 +24,14 @@ public class UrlValidation implements Filter
         Cookie[] cookies = req.getCookies();
         String path = req.getRequestURI().substring(req.getContextPath().length());
         System.out.println("-------------------------------------------------------------Path : "+path+"----------------------------");
-        isAuthenticated.set(authUser(session,cookies));
-        if(isAuthenticated.get())
-        {
-            isManager.set(hasManagerPermission());
-            isAdmin.set(hasAdminPermission());
-        }
-        System.out.println("Authenticated : "+isAuthenticated.get());
-        System.out.println("Has Manager Access : "+isManager.get());
-        System.out.println("Has Admin Access : "+isAdmin.get());
+
+        System.out.println("Authenticated : "+AuthFilter.isAuthenticatedUser());
+        System.out.println("Has Manager Access : "+AuthFilter.hasManagerAccess());
+        System.out.println("Has Admin Access : "+AuthFilter.hasAdminAccess());
         if(path.equals("/login.html") || path.equals("/register.html") || path.equals("/loginPage") || path.equals("/registerPage"))
         {
             System.out.println("Login or Register page called");
-            if(isAuthenticated.get())
+            if(AuthFilter.isAuthenticatedUser())
             {
                 System.out.println("Some user still logged in and try to login or register operation");
                 res.sendRedirect(req.getContextPath()+"/dashboard.html");
@@ -70,7 +59,7 @@ public class UrlValidation implements Filter
         }
         else if(path.equals("/manage-restaurant.html") || path.equals("/add-item.html") || path.equals("/remove-item.html"))
         {
-            if(isManager.get()) {
+            if(AuthFilter.hasManagerAccess()) {
                 chain.doFilter(request, response);
                 return;
             }
@@ -81,7 +70,7 @@ public class UrlValidation implements Filter
         }
         else if(path.equals("/add-restaurant.html") || path.equals("/remove-restaurant.html"))
         {
-            if(isAdmin.get()) {
+            if(AuthFilter.hasAdminAccess()) {
                 chain.doFilter(request, response);
                 return;
             }
@@ -100,56 +89,5 @@ public class UrlValidation implements Filter
             return;
         }
 
-    }
-
-    private boolean authUser(HttpSession session, Cookie[] cookies)
-    {
-        if(session==null || cookies==null)
-            return false;
-        for (Cookie cookie : cookies)
-        {
-            if(cookie.getName().equals("name"))
-            {
-                username = cookie.getValue();
-            }
-            else if(cookie.getName().equals("password")){
-                password = cookie.getValue();
-            }
-            else if(cookie.getName().equals("role"))
-            {
-                role = cookie.getValue();
-            }
-        }
-        if(username==null || password==null || role==null)
-            return false;
-        if(username.equals(session.getAttribute("name")) && password.equals(session.getAttribute("password")) && role.equals(session.getAttribute("role")))
-        {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean hasManagerPermission()
-    {
-        return role.equals(EncryptDecrypt.encrypt("manager")) || role.equals(EncryptDecrypt.encrypt("admin"));
-    }
-
-    private boolean hasAdminPermission()
-    {
-        return role.equals(EncryptDecrypt.encrypt("admin"));
-    }
-
-    public static boolean isAuthenticatedUser()
-    {
-        return isAuthenticated.get();
-    }
-
-    public static boolean hasManagerAccess()
-    {
-        return isManager.get();
-    }
-    public static boolean hasAdminAccess()
-    {
-        return isAdmin.get();
     }
 }

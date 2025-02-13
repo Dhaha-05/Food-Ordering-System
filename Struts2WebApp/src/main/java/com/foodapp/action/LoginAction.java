@@ -24,7 +24,6 @@ public class LoginAction extends ActionSupport implements SessionAware, ServletR
     public String execute() {
         UserService userService = new UserService();
         User user = userService.login(userBean);
-
         if (user != null) {
             session.put("userid", EncryptDecrypt.encrypt(String.valueOf(user.getUserid())));
             session.put("name", EncryptDecrypt.encrypt(user.getFullname()));
