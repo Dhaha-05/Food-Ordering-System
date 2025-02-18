@@ -81,7 +81,7 @@ public class FormValidationInterceptor extends AbstractInterceptor {
                 jsonResponse.put("ratingError", "Invalid rating");
             }
         }
-        
+
         if(isValid)
         {
             return invocation.invoke();

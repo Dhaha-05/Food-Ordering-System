@@ -44,6 +44,8 @@ public class UrlValidation implements Filter
         }
         else if(path.equals("/dashboard.html") || path.endsWith(".action"))
         {
+
+
             chain.doFilter(request,response);
             return;
         }
@@ -60,6 +62,7 @@ public class UrlValidation implements Filter
         else if(path.equals("/manage-restaurant.html") || path.equals("/add-item.html") || path.equals("/remove-item.html"))
         {
             if(AuthFilter.hasManagerAccess()) {
+                System.out.println("----------------------Management Access Enrty-----------------------------");
                 chain.doFilter(request, response);
                 return;
             }
@@ -71,6 +74,7 @@ public class UrlValidation implements Filter
         else if(path.equals("/add-restaurant.html") || path.equals("/remove-restaurant.html"))
         {
             if(AuthFilter.hasAdminAccess()) {
+                System.out.println("------------------------Admin Entry------------------------------------------");
                 chain.doFilter(request, response);
                 return;
             }

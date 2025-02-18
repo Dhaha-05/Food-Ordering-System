@@ -59,6 +59,12 @@
       <version>2.8.9</version> <!-- Or the latest version -->
     </dependency>
 
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>5.2.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>Struts2WebApp</finalName>

@@ -34,6 +34,10 @@ public class AuthFilter implements Filter
             isManager.set(hasManagerPermission());
             isAdmin.set(hasAdminPermission());
         }
+        else {
+            isManager.set(false);
+            isAdmin.set(false);
+        }
         System.out.println("Inside auth Filter");
         System.out.println("Authentication : "+isAuthenticated.get());
         System.out.println("manager : "+isManager.get());

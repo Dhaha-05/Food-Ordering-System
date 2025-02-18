@@ -424,5 +424,6 @@ $(document).ready(function () {
     }
 
     fetchUserDetails();
-    fetchFoodItems();
+//    fetchFoodItems();
+    fetchRestaurant();
 });
