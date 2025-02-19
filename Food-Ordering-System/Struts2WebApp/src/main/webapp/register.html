@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<form id="registerForm">
+    <h1>Register Page</h1>
+
+    <div class="input-field">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required /><br/>
+        <span id="usernameError" class="error"></span>
+    </div>
+
+    <div class="input-field">
+        <label for="fullname">Full Name</label>
+        <input type="text" name="fullname" id="fullname" required /><br/>
+        <span id="fullnameError" class="error"></span>
+    </div>
+
+    <div class="input-field">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required /><br/>
+        <span id="emailError" class="error"></span>
+    </div>
+
+    <div class="input-field">
+        <label for="mobileno">Mobile number</label>
+        <input type="text" name="mobileno" id="mobileno" required /><br/>
+        <span id="mobileError" class="error"></span>
+    </div>
+
+    <div class="input-field">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required /><br/>
+        <span id="passwordError" class="error"></span>
+    </div>
+
+    <div class="input-field">
+        <label for="confirmpassword">Confirm Password</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" required /><br/>
+        <span id="confirmPasswordError" class="error"></span>
+    </div>
+
+    <div class="input-field">
+        <label for="role">Role</label>
+        <select name="role" id="role">
+            <option value="customer" selected>customer</option>
+            <option value="manager">manager</option>
+        </select>
+    </div>
+    <div class="btn">
+        <button type="submit" id="submit-btn">Register</button><br/>
+        <span id="responseMessage" class="error"></span>
+    </div>
+    <div>
+        <p>Already have an account,<a href="login.html">Login</a></p>
+    </div>
+</form>
+<script src="js/register.js"></script>
+</body>
+</html>

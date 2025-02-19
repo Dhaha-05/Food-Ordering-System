@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Struts2WebApp" default="deploy" >
+    <property file="build.properties" />
+    <record name="debug.log" loglevel="debug" append="false" />
+    <record name="error.log" loglevel="error" append="false" />
+
+    <target name="init" depends="clean">
+        <mkdir dir="${class.dir}"/>
+        <mkdir dir="${war.dir}"/>
+        <mkdir dir="${webinf.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <path id="project.classpath">
+            <fileset dir="lib">
+                <include name="**/*.jar" />
+            </fileset>
+        </path>
+        <javac srcdir="${java.dir}" destdir="${class.dir}" classpathref="project.classpath" includeantruntime="false"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar basedir="${class.dir}" destfile="${build.dir}/${ant.project.name}.jar" />
+    </target>
+
+    <target name="copy-resources" depends="jar">
+        <copy todir="${dist.dir}">
+            <fileset dir="${webapp.dir}" />
+        </copy>
+
+        <mkdir dir="${webinf.dir}/classes" />
+        <mkdir dir="${webinf.dir}/lib" />
+
+        <copy todir="${webinf.dir}/lib" >
+            <fileset file="lib/*.jar"/>
+            <fileset file="${build.dir}/${ant.project.name}.jar"/>
+        </copy>
+
+        <copy todir="${webinf.dir}/classes">
+<!--            <fileset dir="${class.dir}" />-->
+            <fileset file="${resource.dir}/struts.xml"/>
+        </copy>
+
+    </target>
+
+    <target name="packages" depends="copy-resources">
+        <war basedir="${dist.dir}" destfile="${war.dir}/${ant.project.name}.war" />
+    </target>
+
+    <target name="deploy" depends="packages">
+        <copy file="${war.dir}/${ant.project.name}.war" todir="${tomcat.dir}"/>
+        <zip basedir="${server.dir}" destfile="${server.dir}/tomcat.zip"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" />
+        <delete file="${tomcat.dir}/${ant.project.name}.war"/>
+        <delete file="${server.dir}/tomcat.zip" />
+    </target>
+
+</project>

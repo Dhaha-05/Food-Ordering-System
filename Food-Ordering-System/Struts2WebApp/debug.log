@@ -1,0 +1,2857 @@
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@2805c96b
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@184cf7cf
+--- MESSAGE LOGGED
+setting a recorder for name error.log
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@184cf7cf
+--- MESSAGE LOGGED
+Setting ro project property: ant.project.invoked-targets -> deploy
+--- MESSAGE LOGGED
+Attempting to create object of type org.apache.tools.ant.helper.DefaultExecutor
+--- MESSAGE LOGGED
+Adding reference: ant.executor
+--- MESSAGE LOGGED
+Build sequence for target(s) `deploy' is [clean, init, compile, jar, copy-resources, packages, deploy]
+--- MESSAGE LOGGED
+Complete build sequence is [clean, init, compile, jar, copy-resources, packages, deploy, ]
+>> TARGET STARTED -- clean
+
+clean:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@5276e6b0
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\FoodItemAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\LoginAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\LogoutAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\NewItemAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\NewRestaurantAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\PurchaseAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\RegisterAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\RemoveItemAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\RestaurantAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action\RestaurantItemAction.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\action
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\controller\LogoutController.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\controller
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\filter\AuthFilter.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\filter\UrlValidation.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\filter
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\interceptor\AuthInterceptor.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\interceptor\FormValidationInterceptor.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\interceptor
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\model\Cart.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\model\FoodItem.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\model\Order.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\model\Restaurant.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\model\User.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\model
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\CartService.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\FoodItemService$1.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\FoodItemService$2.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\FoodItemService$3.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\FoodItemService.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\OrderService.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\RestaurantService$1.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\RestaurantService$2.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\RestaurantService$3.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\RestaurantService$4.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\RestaurantService.class
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service\UserService.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp\service
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\foodapp
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util\cipher\EncryptDecrypt.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util\cipher
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util\connection\DbConnection.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util\connection
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util\redis\RedisUtil.class
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util\redis
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com\util
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes\com
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\classes
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\Struts2WebApp.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\build\war\Struts2WebApp.war
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build\war
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\build
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@5276e6b0
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@333291e3
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\add-item.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\add-restaurant.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\add-item.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\add-restaurant.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\dashboard.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\login.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\manage-restaurant.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\register.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\remove-item.css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\remove-restaurant.css
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist\css
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\dashboard.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\error.jsp
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\index.jsp
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\add-item.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\add-restaurant.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\dashboard.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\login.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\manage-restaurant.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\register.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\remove-item.js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\remove-restaurant.js
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist\js
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\login.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\manage-restaurant.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\register.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\remove-item.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\remove-restaurant.html
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\classes\struts.xml
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\classes
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-fileupload-1.4.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-io-2.6.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-lang3-3.8.1.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-pool2-2.12.0.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\freemarker-2.3.30.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\gson-2.8.9.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\javassist-3.20.0-GA.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\javax.servlet-api-4.0.1.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\jedis-5.2.0.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\json-20240303.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\junit-3.8.1.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\log4j-api-2.14.1.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\log4j-core-2.14.1.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\mysql-connector-j-9.2.0.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\ognl-3.1.28.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\protobuf-java-4.29.0.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\slf4j-api-1.7.36.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\struts2-core-2.5.26.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\struts2-json-plugin-2.5.26.jar
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\Struts2WebApp.jar
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib
+--- MESSAGE LOGGED
+   [delete] Deleting D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\web.xml
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF
+--- MESSAGE LOGGED
+   [delete] Deleting directory D:\Softwares\IdeaProjects\Struts2WebApp\dist
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@333291e3
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@40ef3420
+--- MESSAGE LOGGED
+   [delete] Deleting: D:\Languages\apache-tomcat-9.0.100\webapps\Struts2WebApp.war
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@40ef3420
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@6e171cd7
+--- MESSAGE LOGGED
+   [delete] Deleting: D:\Languages\apache-tomcat-9.0.100\tomcat.zip
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@6e171cd7
+<< TARGET FINISHED -- clean
+clean:  duration 0 seconds
+>> TARGET STARTED -- init
+
+init:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@795cd85e
+--- MESSAGE LOGGED
+    [mkdir] Created dir: D:\Softwares\IdeaProjects\Struts2WebApp\build\classes
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@795cd85e
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@384ad17b
+--- MESSAGE LOGGED
+    [mkdir] Created dir: D:\Softwares\IdeaProjects\Struts2WebApp\build\war
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@384ad17b
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@61862a7f
+--- MESSAGE LOGGED
+    [mkdir] Created dir: D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@61862a7f
+<< TARGET FINISHED -- init
+init:  duration 0 seconds
+>> TARGET STARTED -- compile
+
+compile:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@441772e
+--- MESSAGE LOGGED
+Adding reference: project.classpath
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@441772e
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@9597028
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java with patternSet{ includes: [] excludes: [] }
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\FoodItemAction.java added as com\foodapp\action\FoodItemAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\LoginAction.java added as com\foodapp\action\LoginAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\LogoutAction.java added as com\foodapp\action\LogoutAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\NewItemAction.java added as com\foodapp\action\NewItemAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\NewRestaurantAction.java added as com\foodapp\action\NewRestaurantAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\PurchaseAction.java added as com\foodapp\action\PurchaseAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\RegisterAction.java added as com\foodapp\action\RegisterAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\RemoveItemAction.java added as com\foodapp\action\RemoveItemAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\RestaurantAction.java added as com\foodapp\action\RestaurantAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\action\RestaurantItemAction.java added as com\foodapp\action\RestaurantItemAction.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\controller\LogoutController.java added as com\foodapp\controller\LogoutController.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\filter\AuthFilter.java added as com\foodapp\filter\AuthFilter.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\filter\UrlValidation.java added as com\foodapp\filter\UrlValidation.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\interceptor\AuthInterceptor.java added as com\foodapp\interceptor\AuthInterceptor.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\interceptor\FormValidationInterceptor.java added as com\foodapp\interceptor\FormValidationInterceptor.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\interceptor\ValidateInterceptor.java added as com\foodapp\interceptor\ValidateInterceptor.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\model\Cart.java added as com\foodapp\model\Cart.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\model\FoodItem.java added as com\foodapp\model\FoodItem.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\model\Order.java added as com\foodapp\model\Order.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\model\Restaurant.java added as com\foodapp\model\Restaurant.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\model\User.java added as com\foodapp\model\User.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\service\CartService.java added as com\foodapp\service\CartService.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\service\FoodItemService.java added as com\foodapp\service\FoodItemService.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\service\OrderService.java added as com\foodapp\service\OrderService.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\service\RestaurantService.java added as com\foodapp\service\RestaurantService.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\foodapp\service\UserService.java added as com\foodapp\service\UserService.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\util\cipher\EncryptDecrypt.java added as com\util\cipher\EncryptDecrypt.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\util\connection\DbConnection.java added as com\util\connection\DbConnection.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] com\util\redis\RedisUtil.java added as com\util\redis\RedisUtil.class doesn't exist.
+--- MESSAGE LOGGED
+    [javac] Compiling 29 source files to D:\Softwares\IdeaProjects\Struts2WebApp\build\classes
+--- MESSAGE LOGGED
+    [javac] Using modern compiler
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\lib with patternSet{ includes: [**/*.jar] excludes: [] }
+--- MESSAGE LOGGED
+    [javac] Compilation arguments:
+'-d'
+'D:\Softwares\IdeaProjects\Struts2WebApp\build\classes'
+'-classpath'
+'D:\Softwares\IdeaProjects\Struts2WebApp\build\classes;D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-fileupload-1.4.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-io-2.6.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-lang3-3.8.1.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-pool2-2.12.0.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\freemarker-2.3.30.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\gson-2.8.9.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\javassist-3.20.0-GA.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\javax.servlet-api-4.0.1.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\jedis-5.2.0.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\json-20240303.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\junit-3.8.1.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\log4j-api-2.14.1.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\log4j-core-2.14.1.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\mysql-connector-j-9.2.0.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\ognl-3.1.28.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\protobuf-java-4.29.0.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\slf4j-api-1.7.36.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\struts2-core-2.5.26.jar;D:\Softwares\IdeaProjects\Struts2WebApp\lib\struts2-json-plugin-2.5.26.jar'
+'-sourcepath'
+'D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java'
+'-g:none'
+
+The ' characters around the executable and arguments are
+not part of the command.
+--- MESSAGE LOGGED
+    [javac] Files to be compiled:
+--- MESSAGE LOGGED
+    [javac]     D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\FoodItemAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\LoginAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\LogoutAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\NewItemAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\NewRestaurantAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\PurchaseAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\RegisterAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\RemoveItemAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\RestaurantAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\action\RestaurantItemAction.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\controller\LogoutController.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\filter\AuthFilter.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\filter\UrlValidation.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\interceptor\AuthInterceptor.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\interceptor\FormValidationInterceptor.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\interceptor\ValidateInterceptor.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\model\Cart.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\model\FoodItem.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\model\Order.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\model\Restaurant.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\model\User.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\service\CartService.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\service\FoodItemService.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\service\OrderService.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\service\RestaurantService.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\foodapp\service\UserService.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\util\cipher\EncryptDecrypt.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\util\connection\DbConnection.java
+    D:\Softwares\IdeaProjects\Struts2WebApp\src\main\java\com\util\redis\RedisUtil.java
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@9597028
+<< TARGET FINISHED -- compile
+compile:  duration 1 second
+>> TARGET STARTED -- jar
+
+jar:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@622d7e4
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\build\classes with patternSet{ includes: [] excludes: [] }
+--- MESSAGE LOGGED
+      [jar] Building jar: D:\Softwares\IdeaProjects\Struts2WebApp\build\Struts2WebApp.jar
+--- MESSAGE LOGGED
+      [jar] adding directory META-INF/
+--- MESSAGE LOGGED
+      [jar] adding entry META-INF/MANIFEST.MF
+--- MESSAGE LOGGED
+      [jar] adding directory com/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/action/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/controller/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/filter/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/interceptor/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/model/
+--- MESSAGE LOGGED
+      [jar] adding directory com/foodapp/service/
+--- MESSAGE LOGGED
+      [jar] adding directory com/util/
+--- MESSAGE LOGGED
+      [jar] adding directory com/util/cipher/
+--- MESSAGE LOGGED
+      [jar] adding directory com/util/connection/
+--- MESSAGE LOGGED
+      [jar] adding directory com/util/redis/
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/FoodItemAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/LoginAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/LogoutAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/NewItemAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/NewRestaurantAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/PurchaseAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/RegisterAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/RemoveItemAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/RestaurantAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/action/RestaurantItemAction.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/controller/LogoutController.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/filter/AuthFilter.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/filter/UrlValidation.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/interceptor/AuthInterceptor.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/interceptor/FormValidationInterceptor.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/model/Cart.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/model/FoodItem.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/model/Order.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/model/Restaurant.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/model/User.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/CartService.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/FoodItemService$1.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/FoodItemService$2.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/FoodItemService$3.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/FoodItemService.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/OrderService.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/RestaurantService$1.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/RestaurantService$2.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/RestaurantService$3.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/RestaurantService$4.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/RestaurantService.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/foodapp/service/UserService.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/util/cipher/EncryptDecrypt.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/util/connection/DbConnection.class
+--- MESSAGE LOGGED
+      [jar] adding entry com/util/redis/RedisUtil.class
+--- MESSAGE LOGGED
+      [jar] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+Location: D:\Softwares\IdeaProjects\Struts2WebApp\build.xml:23: 
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@622d7e4
+<< TARGET FINISHED -- jar
+jar:  duration 0 seconds
+>> TARGET STARTED -- copy-resources
+
+copy-resources:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@1a9ec80e
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp with patternSet{ includes: [] excludes: [] }
+--- MESSAGE LOGGED
+     [copy] WEB-INF\web.xml added as WEB-INF\web.xml doesn't exist.
+--- MESSAGE LOGGED
+     [copy] add-item.html added as add-item.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] add-restaurant.html added as add-restaurant.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\add-item.css added as css\add-item.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\add-restaurant.css added as css\add-restaurant.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\dashboard.css added as css\dashboard.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\login.css added as css\login.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\manage-restaurant.css added as css\manage-restaurant.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\register.css added as css\register.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\remove-item.css added as css\remove-item.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] css\remove-restaurant.css added as css\remove-restaurant.css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] dashboard.html added as dashboard.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] error.jsp added as error.jsp doesn't exist.
+--- MESSAGE LOGGED
+     [copy] index.jsp added as index.jsp doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\add-item.js added as js\add-item.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\add-restaurant.js added as js\add-restaurant.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\dashboard.js added as js\dashboard.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\login.js added as js\login.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\manage-restaurant.js added as js\manage-restaurant.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\register.js added as js\register.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\remove-item.js added as js\remove-item.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js\remove-restaurant.js added as js\remove-restaurant.js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] login.html added as login.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] manage-restaurant.html added as manage-restaurant.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] register.html added as register.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] remove-item.html added as remove-item.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy] remove-restaurant.html added as remove-restaurant.html doesn't exist.
+--- MESSAGE LOGGED
+     [copy]  omitted as D:\Softwares\IdeaProjects\Struts2WebApp\dist is up to date.
+--- MESSAGE LOGGED
+     [copy] WEB-INF omitted as D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF is up to date.
+--- MESSAGE LOGGED
+     [copy] css added as css doesn't exist.
+--- MESSAGE LOGGED
+     [copy] js added as js doesn't exist.
+--- MESSAGE LOGGED
+     [copy] Copying 27 files to D:\Softwares\IdeaProjects\Struts2WebApp\dist
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\WEB-INF\web.xml to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\web.xml
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\add-item.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\add-item.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\add-restaurant.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\add-restaurant.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\add-item.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\add-item.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\add-restaurant.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\add-restaurant.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\dashboard.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\dashboard.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\login.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\login.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\manage-restaurant.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\manage-restaurant.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\register.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\register.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\remove-item.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\remove-item.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\css\remove-restaurant.css to D:\Softwares\IdeaProjects\Struts2WebApp\dist\css\remove-restaurant.css
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\dashboard.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\dashboard.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\error.jsp to D:\Softwares\IdeaProjects\Struts2WebApp\dist\error.jsp
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\index.jsp to D:\Softwares\IdeaProjects\Struts2WebApp\dist\index.jsp
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\add-item.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\add-item.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\add-restaurant.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\add-restaurant.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\dashboard.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\dashboard.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\login.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\login.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\manage-restaurant.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\manage-restaurant.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\register.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\register.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\remove-item.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\remove-item.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\js\remove-restaurant.js to D:\Softwares\IdeaProjects\Struts2WebApp\dist\js\remove-restaurant.js
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\login.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\login.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\manage-restaurant.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\manage-restaurant.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\register.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\register.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\remove-item.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\remove-item.html
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\webapp\remove-restaurant.html to D:\Softwares\IdeaProjects\Struts2WebApp\dist\remove-restaurant.html
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@1a9ec80e
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@4b195203
+--- MESSAGE LOGGED
+    [mkdir] Created dir: D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\classes
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@4b195203
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@28a6e171
+--- MESSAGE LOGGED
+    [mkdir] Created dir: D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@28a6e171
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@30a9e3db
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\lib with patternSet{ includes: [*.jar] excludes: [] }
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\build with patternSet{ includes: [Struts2WebApp.jar] excludes: [] }
+--- MESSAGE LOGGED
+     [copy] Struts2WebApp.jar added as Struts2WebApp.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] No sources found.
+--- MESSAGE LOGGED
+     [copy] commons-fileupload-1.4.jar added as commons-fileupload-1.4.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] commons-io-2.6.jar added as commons-io-2.6.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] commons-lang3-3.8.1.jar added as commons-lang3-3.8.1.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] commons-pool2-2.12.0.jar added as commons-pool2-2.12.0.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] freemarker-2.3.30.jar added as freemarker-2.3.30.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] gson-2.8.9.jar added as gson-2.8.9.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] javassist-3.20.0-GA.jar added as javassist-3.20.0-GA.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] javax.servlet-api-4.0.1.jar added as javax.servlet-api-4.0.1.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] jedis-5.2.0.jar added as jedis-5.2.0.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] json-20240303.jar added as json-20240303.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] junit-3.8.1.jar added as junit-3.8.1.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] log4j-api-2.14.1.jar added as log4j-api-2.14.1.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] log4j-core-2.14.1.jar added as log4j-core-2.14.1.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] mysql-connector-j-9.2.0.jar added as mysql-connector-j-9.2.0.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] ognl-3.1.28.jar added as ognl-3.1.28.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] protobuf-java-4.29.0.jar added as protobuf-java-4.29.0.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] slf4j-api-1.7.36.jar added as slf4j-api-1.7.36.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] struts2-core-2.5.26.jar added as struts2-core-2.5.26.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] struts2-json-plugin-2.5.26.jar added as struts2-json-plugin-2.5.26.jar doesn't exist.
+--- MESSAGE LOGGED
+     [copy] No sources found.
+--- MESSAGE LOGGED
+     [copy] Copying 20 files to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\build\Struts2WebApp.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\Struts2WebApp.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-fileupload-1.4.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-fileupload-1.4.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-io-2.6.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-io-2.6.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-lang3-3.8.1.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-lang3-3.8.1.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\commons-pool2-2.12.0.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\commons-pool2-2.12.0.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\freemarker-2.3.30.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\freemarker-2.3.30.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\gson-2.8.9.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\gson-2.8.9.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\javassist-3.20.0-GA.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\javassist-3.20.0-GA.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\javax.servlet-api-4.0.1.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\javax.servlet-api-4.0.1.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\jedis-5.2.0.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\jedis-5.2.0.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\json-20240303.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\json-20240303.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\junit-3.8.1.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\junit-3.8.1.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\log4j-api-2.14.1.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\log4j-api-2.14.1.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\log4j-core-2.14.1.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\log4j-core-2.14.1.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\mysql-connector-j-9.2.0.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\mysql-connector-j-9.2.0.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\ognl-3.1.28.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\ognl-3.1.28.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\protobuf-java-4.29.0.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\protobuf-java-4.29.0.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\slf4j-api-1.7.36.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\slf4j-api-1.7.36.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\struts2-core-2.5.26.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\struts2-core-2.5.26.jar
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\lib\struts2-json-plugin-2.5.26.jar to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\lib\struts2-json-plugin-2.5.26.jar
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@30a9e3db
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@56a4abd0
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\src\main\resources with patternSet{ includes: [struts.xml] excludes: [] }
+--- MESSAGE LOGGED
+     [copy] struts.xml added as struts.xml doesn't exist.
+--- MESSAGE LOGGED
+     [copy] No sources found.
+--- MESSAGE LOGGED
+     [copy] Copying 1 file to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\classes
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\src\main\resources\struts.xml to D:\Softwares\IdeaProjects\Struts2WebApp\dist\WEB-INF\classes\struts.xml
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@56a4abd0
+<< TARGET FINISHED -- copy-resources
+copy-resources:  duration 0 seconds
+>> TARGET STARTED -- packages
+
+packages:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@7558c24b
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Softwares\IdeaProjects\Struts2WebApp\dist with patternSet{ includes: [] excludes: [] }
+--- MESSAGE LOGGED
+      [war] Building war: D:\Softwares\IdeaProjects\Struts2WebApp\build\war\Struts2WebApp.war
+--- MESSAGE LOGGED
+      [war] adding directory META-INF/
+--- MESSAGE LOGGED
+      [war] adding entry META-INF/MANIFEST.MF
+--- MESSAGE LOGGED
+      [war] adding directory WEB-INF/
+--- MESSAGE LOGGED
+      [war] adding directory WEB-INF/classes/
+--- MESSAGE LOGGED
+      [war] adding directory WEB-INF/lib/
+--- MESSAGE LOGGED
+      [war] adding directory css/
+--- MESSAGE LOGGED
+      [war] adding directory js/
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/classes/struts.xml
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/Struts2WebApp.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/commons-fileupload-1.4.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/commons-io-2.6.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/commons-lang3-3.8.1.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/commons-pool2-2.12.0.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/freemarker-2.3.30.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/gson-2.8.9.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/javassist-3.20.0-GA.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/javax.servlet-api-4.0.1.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/jedis-5.2.0.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/json-20240303.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/junit-3.8.1.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/log4j-api-2.14.1.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/log4j-core-2.14.1.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/mysql-connector-j-9.2.0.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/ognl-3.1.28.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/protobuf-java-4.29.0.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/slf4j-api-1.7.36.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/struts2-core-2.5.26.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/lib/struts2-json-plugin-2.5.26.jar
+--- MESSAGE LOGGED
+      [war] adding entry WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [war] adding entry add-item.html
+--- MESSAGE LOGGED
+      [war] adding entry add-restaurant.html
+--- MESSAGE LOGGED
+      [war] adding entry css/add-item.css
+--- MESSAGE LOGGED
+      [war] adding entry css/add-restaurant.css
+--- MESSAGE LOGGED
+      [war] adding entry css/dashboard.css
+--- MESSAGE LOGGED
+      [war] adding entry css/login.css
+--- MESSAGE LOGGED
+      [war] adding entry css/manage-restaurant.css
+--- MESSAGE LOGGED
+      [war] adding entry css/register.css
+--- MESSAGE LOGGED
+      [war] adding entry css/remove-item.css
+--- MESSAGE LOGGED
+      [war] adding entry css/remove-restaurant.css
+--- MESSAGE LOGGED
+      [war] adding entry dashboard.html
+--- MESSAGE LOGGED
+      [war] adding entry error.jsp
+--- MESSAGE LOGGED
+      [war] adding entry index.jsp
+--- MESSAGE LOGGED
+      [war] adding entry js/add-item.js
+--- MESSAGE LOGGED
+      [war] adding entry js/add-restaurant.js
+--- MESSAGE LOGGED
+      [war] adding entry js/dashboard.js
+--- MESSAGE LOGGED
+      [war] adding entry js/login.js
+--- MESSAGE LOGGED
+      [war] adding entry js/manage-restaurant.js
+--- MESSAGE LOGGED
+      [war] adding entry js/register.js
+--- MESSAGE LOGGED
+      [war] adding entry js/remove-item.js
+--- MESSAGE LOGGED
+      [war] adding entry js/remove-restaurant.js
+--- MESSAGE LOGGED
+      [war] adding entry login.html
+--- MESSAGE LOGGED
+      [war] adding entry manage-restaurant.html
+--- MESSAGE LOGGED
+      [war] adding entry register.html
+--- MESSAGE LOGGED
+      [war] adding entry remove-item.html
+--- MESSAGE LOGGED
+      [war] adding entry remove-restaurant.html
+--- MESSAGE LOGGED
+      [war] No Implementation-Title set.No Implementation-Version set.No Implementation-Vendor set.
+Location: D:\Softwares\IdeaProjects\Struts2WebApp\build.xml:47: 
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@7558c24b
+<< TARGET FINISHED -- packages
+packages:  duration 0 seconds
+>> TARGET STARTED -- deploy
+
+deploy:
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@6c742b84
+--- MESSAGE LOGGED
+     [copy] Copying 1 file to D:\Languages\apache-tomcat-9.0.100\webapps
+--- MESSAGE LOGGED
+     [copy] Copying D:\Softwares\IdeaProjects\Struts2WebApp\build\war\Struts2WebApp.war to D:\Languages\apache-tomcat-9.0.100\webapps\Struts2WebApp.war
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@6c742b84
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@5db3d57c
+--- MESSAGE LOGGED
+fileset: Setup scanner in dir D:\Languages\apache-tomcat-9.0.100 with patternSet{ includes: [] excludes: [] }
+--- MESSAGE LOGGED
+      [zip] Building zip: D:\Languages\apache-tomcat-9.0.100\tomcat.zip
+--- MESSAGE LOGGED
+      [zip] adding directory bin/
+--- MESSAGE LOGGED
+      [zip] adding directory conf/
+--- MESSAGE LOGGED
+      [zip] adding directory conf/Catalina/
+--- MESSAGE LOGGED
+      [zip] adding directory conf/Catalina/dhaha.com/
+--- MESSAGE LOGGED
+      [zip] adding directory conf/Catalina/google.com/
+--- MESSAGE LOGGED
+      [zip] adding directory conf/Catalina/localhost/
+--- MESSAGE LOGGED
+      [zip] adding directory lib/
+--- MESSAGE LOGGED
+      [zip] adding directory logs/
+--- MESSAGE LOGGED
+      [zip] adding directory temp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/ROOT/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/ROOT/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/META-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/WEB-INF/classes/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/WEB-INF/lib/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/css/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/Struts2WebApp/js/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/META-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/WEB-INF/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/annotationapi/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/api/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/docs/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/src/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/src/mypackage/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/web/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/web/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/appdev/sample/web/images/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/architecture/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/architecture/requestProcess/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/architecture/startup/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/config/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/elapi/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/images/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/images/fonts/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/jaspicapi/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/jspapi/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/servletapi/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/tribes/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/docs/websocketapi/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/META-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/async/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/checkbox/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/colors/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/compressionFilters/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/dates/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/error/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/examples/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/filters/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/http2/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/jsp2/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/jsp2/examples/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/jsp2/examples/el/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/listeners/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/nonblocking/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/num/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/sessions/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/trailers/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/util/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/validators/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/websocket/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/websocket/chat/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/websocket/drawboard/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/websocket/echo/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/classes/websocket/snake/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/lib/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/WEB-INF/tags/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/async/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/checkbox/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/colors/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/dates/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/error/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/forward/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/images/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/include/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/el/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/jspattribute/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/jspx/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/misc/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/simpletag/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsp2/tagfiles/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/jsptoserv/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/num/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/security/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/security/protected/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/sessions/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/simpletag/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/snp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/tagplugin/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/jsp/xml/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/servlets/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/servlets/images/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/servlets/nonblocking/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/examples/websocket/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/META-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/action/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/controller/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/filter/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/interceptor/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/model/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/foodapp/service/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/util/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/util/cipher/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/util/connection/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/classes/com/util/redis/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/WEB-INF/lib/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/css/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/food_app/js/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/host-manager/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/host-manager/META-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/host-manager/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/host-manager/WEB-INF/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/host-manager/css/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/host-manager/images/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/manager/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/manager/META-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/manager/WEB-INF/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/manager/WEB-INF/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/manager/css/
+--- MESSAGE LOGGED
+      [zip] adding directory webapps/manager/images/
+--- MESSAGE LOGGED
+      [zip] adding directory work/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/dhaha.com/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/google.com/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/ROOT/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/ROOT/org/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/ROOT/org/apache/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/ROOT/org/apache/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp-1.0-SNAPSHOT/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp-1.0-SNAPSHOT/org/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp-1.0-SNAPSHOT/org/apache/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp-1.0-SNAPSHOT/org/apache/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp/org/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp/org/apache/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/Struts2WebApp/org/apache/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/docs/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/examples/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/food_app/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/food_app/org/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/food_app/org/apache/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/food_app/org/apache/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/host-manager/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/host-manager/org/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/host-manager/org/apache/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/host-manager/org/apache/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/host-manager/org/apache/jsp/WEB_002dINF/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/host-manager/org/apache/jsp/WEB_002dINF/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/manager/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/manager/org/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/manager/org/apache/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/manager/org/apache/jsp/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/manager/org/apache/jsp/WEB_002dINF/
+--- MESSAGE LOGGED
+      [zip] adding directory work/Catalina/localhost/manager/org/apache/jsp/WEB_002dINF/jsp/
+--- MESSAGE LOGGED
+      [zip] adding entry BUILDING.txt
+--- MESSAGE LOGGED
+      [zip] adding entry CONTRIBUTING.md
+--- MESSAGE LOGGED
+      [zip] adding entry LICENSE
+--- MESSAGE LOGGED
+      [zip] adding entry NOTICE
+--- MESSAGE LOGGED
+      [zip] adding entry README.md
+--- MESSAGE LOGGED
+      [zip] adding entry RELEASE-NOTES
+--- MESSAGE LOGGED
+      [zip] adding entry RUNNING.txt
+--- MESSAGE LOGGED
+      [zip] adding entry bin/bootstrap.jar
+--- MESSAGE LOGGED
+      [zip] adding entry bin/catalina-tasks.xml
+--- MESSAGE LOGGED
+      [zip] adding entry bin/catalina.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/catalina.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/ciphers.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/ciphers.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/commons-daemon.jar
+--- MESSAGE LOGGED
+      [zip] adding entry bin/configtest.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/configtest.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/daemon.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/digest.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/digest.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/makebase.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/makebase.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/service.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/setclasspath.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/setclasspath.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/shutdown.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/shutdown.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/startup.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/startup.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/tcnative-1.dll
+--- MESSAGE LOGGED
+      [zip] adding entry bin/tomcat-juli.jar
+--- MESSAGE LOGGED
+      [zip] adding entry bin/tomcat9.exe
+--- MESSAGE LOGGED
+      [zip] adding entry bin/tomcat9w.exe
+--- MESSAGE LOGGED
+      [zip] adding entry bin/tool-wrapper.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/tool-wrapper.sh
+--- MESSAGE LOGGED
+      [zip] adding entry bin/version.bat
+--- MESSAGE LOGGED
+      [zip] adding entry bin/version.sh
+--- MESSAGE LOGGED
+      [zip] adding entry conf/Catalina/dhaha.com/manager.xml
+--- MESSAGE LOGGED
+      [zip] adding entry conf/Catalina/google.com/manager.xml
+--- MESSAGE LOGGED
+      [zip] adding entry conf/catalina.policy
+--- MESSAGE LOGGED
+      [zip] adding entry conf/catalina.properties
+--- MESSAGE LOGGED
+      [zip] adding entry conf/context.xml
+--- MESSAGE LOGGED
+      [zip] adding entry conf/jaspic-providers.xml
+--- MESSAGE LOGGED
+      [zip] adding entry conf/jaspic-providers.xsd
+--- MESSAGE LOGGED
+      [zip] adding entry conf/logging.properties
+--- MESSAGE LOGGED
+      [zip] adding entry conf/server.xml
+--- MESSAGE LOGGED
+      [zip] adding entry conf/tomcat-users.xml
+--- MESSAGE LOGGED
+      [zip] adding entry conf/tomcat-users.xsd
+--- MESSAGE LOGGED
+      [zip] adding entry conf/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry lib/annotations-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/catalina-ant.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/catalina-ha.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/catalina-ssi.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/catalina-storeconfig.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/catalina-tribes.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/catalina.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/ecj-4.20.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/el-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/jasper-el.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/jasper.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/jaspic-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/jsp-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/servlet-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-coyote-ffm.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-coyote.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-dbcp.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-cs.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-de.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-es.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-fr.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-ja.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-ko.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-pt-BR.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-ru.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-i18n-zh-CN.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-jdbc.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-jni.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-util-scan.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-util.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/tomcat-websocket.jar
+--- MESSAGE LOGGED
+      [zip] adding entry lib/websocket-api.jar
+--- MESSAGE LOGGED
+      [zip] adding entry logs/catalina.2025-02-19.log
+--- MESSAGE LOGGED
+      [zip] adding entry logs/host-manager.2025-02-19.log
+--- MESSAGE LOGGED
+      [zip] adding entry logs/localhost.2025-02-19.log
+--- MESSAGE LOGGED
+      [zip] adding entry logs/localhost_access_log.2025-02-19.txt
+--- MESSAGE LOGGED
+      [zip] adding entry logs/manager.2025-02-19.log
+--- MESSAGE LOGGED
+      [zip] adding entry temp/safeToDelete.tmp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/RELEASE-NOTES.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/asf-logo-wide.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/bg-button.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/bg-middle.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/bg-nav.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/bg-upper.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/favicon.ico
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/tomcat.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/ROOT/tomcat.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp.war
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/META-INF/MANIFEST.MF
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/META-INF/war-tracker
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/classes/struts.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/Struts2WebApp.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/commons-fileupload-1.4.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/commons-io-2.6.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/commons-lang3-3.8.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/commons-pool2-2.12.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/freemarker-2.3.30.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/gson-2.8.9.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/javassist-3.20.0-GA.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/javax.servlet-api-4.0.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/jedis-5.2.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/json-20240303.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/junit-3.8.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/log4j-api-2.14.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/log4j-core-2.14.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/mysql-connector-j-9.2.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/ognl-3.1.28.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/protobuf-java-4.29.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/slf4j-api-1.7.36.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/struts2-core-2.5.26.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/lib/struts2-json-plugin-2.5.26.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/add-item.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/add-restaurant.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/add-item.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/add-restaurant.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/dashboard.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/login.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/manage-restaurant.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/register.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/remove-item.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/css/remove-restaurant.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/dashboard.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/error.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/add-item.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/add-restaurant.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/dashboard.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/login.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/manage-restaurant.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/register.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/remove-item.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/js/remove-restaurant.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/login.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/manage-restaurant.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/register.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/remove-item.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/Struts2WebApp/remove-restaurant.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/BUILDING.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/META-INF/context.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/RELEASE-NOTES.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/RUNNING.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/WEB-INF/jsp/403.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/aio.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/annotationapi/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/api/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/build.xml.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/deployment.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/installation.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/introduction.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/processes.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/build.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/docs/README.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/sample.war
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/src/mypackage/Hello.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/web/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/web/hello.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/web/images/tomcat.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/sample/web/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/source.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/appdev/web.xml.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/apr.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/overview.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/requestProcess.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/requestProcess/authentication-process.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/requestProcess/request-process.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/1_overview.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/1_overview.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/2_catalina_init.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/2_catalina_init.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/3_catalina_start_1.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/3_catalina_start_1.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/4_catalina_start_2.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/4_catalina_start_2.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/5_catalina_start_3.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/5_catalina_start_3.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/6_catalina_host_config.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/6_catalina_host_config.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/7_catalina_context_config.plantuml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/7_catalina_context_config.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/architecture/startup/serverStartup.txt
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/balancer-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/building.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/cdi.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/cgi-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/changelog.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/class-loader-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/cluster-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/comments.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/ajp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/automatic-deployment.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-channel.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-deployer.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-interceptor.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-listener.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-manager.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-membership.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-receiver.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-sender.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster-valve.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cluster.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/context.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/cookie-processor.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/credentialhandler.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/engine.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/executor.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/filter.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/globalresources.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/host.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/http.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/http2.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/jar-scan-filter.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/jar-scanner.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/jaspic.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/listeners.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/loader.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/manager.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/realm.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/resources.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/server.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/service.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/sessionidgenerator.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/systemprops.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/config/valve.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/connectors.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/default-servlet.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/deployer-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/developers.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/elapi/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/graal.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/host-manager-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/html-host-manager-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/html-manager-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/add.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/asf-logo.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/code.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/cors-flowchart.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/design.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/docs-stylesheet.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/docs.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fix.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/OpenSans400.woff
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/OpenSans400italic.woff
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/OpenSans600.woff
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/OpenSans600italic.woff
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/OpenSans700.woff
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/OpenSans700italic.woff
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/fonts/fonts.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/tomcat.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/tomcat.png
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/update.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/images/void.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/introduction.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/jasper-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/jaspicapi/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/jdbc-pool.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/jndi-datasource-examples-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/jndi-resources-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/jspapi/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/logging.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/manager-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/maven-jars.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/mbeans-descriptors-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/mbeans-descriptors.dtd
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/monitoring.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/proxy-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/realm-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/rewrite.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/security-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/security-manager-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/servletapi/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/setup.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/ssi-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/ssl-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/developers.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/faq.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/interceptors.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/introduction.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/membership.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/setup.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/status.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/tribes/transport.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/virtual-hosting-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/web-socket-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/websocketapi/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/windows-auth-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/docs/windows-service-howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/META-INF/context.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/CookieExample.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/CookieExample.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/HelloWorldExample.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/HelloWorldExample.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_cs.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_de.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_es.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_pt_BR.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/RequestHeaderExample.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/RequestHeaderExample.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/RequestInfoExample.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/RequestInfoExample.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/RequestParamExample.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/RequestParamExample.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/ServletToJsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/ServletToJsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/SessionExample.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/SessionExample.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async0$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async0.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async0.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async1$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async1.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async2$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async2.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async2.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async3.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Async3.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Stockticker$TickListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Stockticker.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/async/Stockticker.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/checkbox/CheckTest.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/checkbox/CheckTest.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/colors/ColorGameBean.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/colors/ColorGameBean.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/dates/JspCalendar.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/dates/JspCalendar.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/error/Smart.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/error/Smart.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/ExampleTagBase.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/ExampleTagBase.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/FooTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/FooTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/LogTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/LogTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/ValuesTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/examples/ValuesTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/http2/SimpleImagePush.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/http2/SimpleImagePush.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/listeners/ContextListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/listeners/ContextListener.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/listeners/SessionListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/listeners/SessionListener.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$CounterListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$NumberWriterListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/sessions/DummyCart.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/sessions/Item.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/sessions/Item.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$TrailerFieldSupplier.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/util/CookieFilter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/util/CookieFilter.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/util/HTMLFilter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/util/HTMLFilter.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/validators/DebugValidator.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Client$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Client.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Client.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage$ParseException.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$2.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room$2.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room$MessageType.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room$Player.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/Room.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$CompletedFuture.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/echo/servers.json
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/jsp/403.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/jsp/403.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/jsp/debug-taglib.tld
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/jsp/example-taglib.tld
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/tags/displayProducts.tag
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/tags/helloWorld.tag
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/tags/panel.tag
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/async/async1.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/async/async1.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/async/async3.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/async/async3.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/async/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/async/index.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/checkbox/CheckTest.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/checkbox/check.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/checkbox/checkresult.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/checkbox/checkresult.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/checkbox/cresult.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/colors/ColorGameBean.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/colors/clr.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/colors/colors.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/colors/colrs.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/colors/colrs.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/dates/date.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/dates/date.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/dates/date.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/error/er.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/error/err.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/error/err.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/error/error.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/error/errorpge.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/error/errorpge.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/forward/forward.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/forward/forward.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/forward/fwd.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/forward/one.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/forward/one.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/forward/two.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/images/code.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/images/execute.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/images/return.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/include/foo.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/include/foo.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/include/foo.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/include/inc.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/include/include.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/include/include.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/Functions.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/ValuesBean.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/ValuesTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/basic-arithmetic.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/basic-comparisons.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/basic-comparisons.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/basic-comparisons.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/composite.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/composite.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/composite.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/functions.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/functions.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/functions.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/implicit-objects.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/implicit-objects.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/el/implicit-objects.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/FooBean.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/HelloWorldSimpleTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/ShuffleSimpleTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/TileSimpleTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/jspattribute.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/shuffle.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/basic.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/basic.jspx
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/basic.jspx.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/svgexample.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/textRotate.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/textRotate.jpg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/textRotate.jspx
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/jspx/textRotate.jspx.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/EchoAttributesTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/coda.jspf
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/coda.jspf.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/config.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/config.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/config.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/dynamicattrs.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/prelude.jspf
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/misc/prelude.jspf.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/BookBean.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/FindBookSimpleTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/Functions.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/HelloWorldSimpleTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/RepeatSimpleTag.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/book.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/book.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/book.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/hello.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/hello.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/hello.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/repeat.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/repeat.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/simpletag/repeat.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/displayProducts.tag.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/hello.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/hello.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/hello.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/helloWorld.tag.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/panel.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/panel.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/panel.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/panel.tag.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/products.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/products.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsp2/tagfiles/products.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsptoserv/ServletToJsp.java.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsptoserv/hello.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsptoserv/hello.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsptoserv/jsptoservlet.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/jsptoserv/jts.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/num/numguess.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/num/numguess.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/num/numguess.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/security/protected/error.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/security/protected/error.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/security/protected/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/security/protected/index.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/security/protected/login.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/security/protected/login.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/sessions/DummyCart.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/sessions/carts.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/sessions/carts.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/sessions/crt.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/sessions/shopping.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/sessions/shopping.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/simpletag/foo.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/simpletag/foo.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/simpletag/foo.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/snp/snoop.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/snp/snoop.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/snp/snoop.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/choose.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/choose.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/choose.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/foreach.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/foreach.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/foreach.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/howto.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/if.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/if.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/if.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/tagplugin/notes.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/xml/xml.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/xml/xml.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/jsp/xml/xml.jsp.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/cookies.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/helloworld.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/images/code.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/images/execute.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/images/return.gif
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/index.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/nonblocking/bytecounter.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/reqheaders.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/reqinfo.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/reqparams.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/servlets/sessions.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/websocket/chat.xhtml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/websocket/drawboard.xhtml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/websocket/echo.xhtml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/websocket/index.xhtml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/examples/websocket/snake.xhtml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app.war
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/META-INF/MANIFEST.MF
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/META-INF/war-tracker
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/FoodItemAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/LoginAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/LogoutAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/NewItemAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/NewRestaurantAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/PurchaseAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/RegisterAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/RemoveItemAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/RestaurantAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/action/RestaurantItemAction.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/controller/LogoutController.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/filter/AuthFilter.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/filter/UrlValidation.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/interceptor/AuthInterceptor.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/interceptor/FormValidationInterceptor.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/model/Cart.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/model/FoodItem.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/model/Order.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/model/Restaurant.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/model/User.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/CartService.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/FoodItemService$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/FoodItemService$2.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/FoodItemService$3.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/FoodItemService.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/OrderService.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/RestaurantService$1.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/RestaurantService$2.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/RestaurantService$3.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/RestaurantService$4.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/RestaurantService.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/foodapp/service/UserService.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/util/cipher/EncryptDecrypt.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/util/connection/DbConnection.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/com/util/redis/RedisUtil.class
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/classes/struts.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/commons-fileupload-1.4.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/commons-io-2.6.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/commons-lang3-3.8.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/commons-pool2-2.12.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/food_app.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/freemarker-2.3.30.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/gson-2.8.9.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/javassist-3.20.0-GA.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/javax.servlet-api-4.0.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/jedis-5.2.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/json-20240303.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/junit-3.8.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/log4j-api-2.14.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/log4j-core-2.14.1.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/mysql-connector-j-9.2.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/ognl-3.1.28.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/protobuf-java-4.29.0.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/slf4j-api-1.7.36.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/struts2-core-2.5.26.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/lib/struts2-json-plugin-2.5.26.jar
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/add-item.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/add-restaurant.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/add-item.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/add-restaurant.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/dashboard.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/login.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/manage-restaurant.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/register.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/remove-item.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/css/remove-restaurant.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/dashboard.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/error.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/add-item.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/add-restaurant.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/dashboard.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/login.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/manage-restaurant.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/register.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/remove-item.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/js/remove-restaurant.js
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/login.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/manage-restaurant.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/register.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/remove-item.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/food_app/remove-restaurant.html
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/META-INF/context.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/WEB-INF/jsp/401.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/WEB-INF/jsp/403.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/WEB-INF/jsp/404.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/WEB-INF/manager.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/css/manager.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/images/asf-logo.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/images/tomcat.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/host-manager/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/META-INF/context.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/401.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/403.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/404.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/connectorCerts.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/jsp/sessionsList.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/WEB-INF/web.xml
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/css/manager.css
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/images/asf-logo.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/images/tomcat.svg
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/index.jsp
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/status.xsd
+--- MESSAGE LOGGED
+      [zip] adding entry webapps/manager/xform.xsl
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp-1.0-SNAPSHOT/org/apache/jsp/index_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp-1.0-SNAPSHOT/org/apache/jsp/index_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/SESSIONS.ser
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/error_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/error_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/index_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/index_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/login_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/login_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/register_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/Struts2WebApp/org/apache/jsp/register_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/food_app/org/apache/jsp/index_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/food_app/org/apache/jsp/index_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/host-manager/org/apache/jsp/WEB_002dINF/jsp/_401_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/host-manager/org/apache/jsp/WEB_002dINF/jsp/_401_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/host-manager/org/apache/jsp/WEB_002dINF/jsp/_403_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/host-manager/org/apache/jsp/WEB_002dINF/jsp/_403_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/host-manager/org/apache/jsp/index_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/host-manager/org/apache/jsp/index_jsp.java
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/manager/SESSIONS.ser
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/manager/org/apache/jsp/WEB_002dINF/jsp/_401_jsp.class
+--- MESSAGE LOGGED
+      [zip] adding entry work/Catalina/localhost/manager/org/apache/jsp/WEB_002dINF/jsp/_401_jsp.java
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@5db3d57c
+>>> TASK STARTED -- org.apache.tools.ant.UnknownElement@74ba6ff5
+--- MESSAGE LOGGED
+     [exec] Current OS is Windows 11
+--- MESSAGE LOGGED
+     [exec] Setting environment variable: CATALINA_HOME=run
+--- MESSAGE LOGGED
+     [exec] Executing 'D:\Languages\apache-tomcat-9.0.100\bin\startup.bat'
+The ' characters around the executable and arguments are
+not part of the command.
+--- MESSAGE LOGGED
+Execute:Java13CommandLauncher: Executing 'D:\Languages\apache-tomcat-9.0.100\bin\startup.bat'
+The ' characters around the executable and arguments are
+not part of the command.
+--- MESSAGE LOGGED
+     [exec] The CATALINA_HOME environment variable is not defined correctly
+--- MESSAGE LOGGED
+     [exec] This environment variable is needed to run this program
+<<< TASK FINISHED -- org.apache.tools.ant.UnknownElement@74ba6ff5
+<< TARGET FINISHED -- deploy
+deploy:  duration 2 seconds
+< BUILD FINISHED
+
+BUILD SUCCESSFUL

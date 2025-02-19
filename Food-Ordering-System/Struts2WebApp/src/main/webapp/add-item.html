@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="./css/add-item.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<nav>
+    <h1>Select restaurant to add items</h1>
+</nav>
+<div id="restaurant-list"></div>
+<form id="add-item-form" style="display: none;">
+    <input type="hidden" id="restaurant-id">
+    <label for="item-name">Item Name:</label>
+    <input type="text" id="item-name" class="input-field" required><br>
+    <span id="itemnameError" class="error"></span><br>
+    <label for="item-category">Category:</label>
+    <select name="item-category" id="item-category">
+        <option value="Tiffin">Tiffin</option>
+        <option value="Juices">Juices</option>
+        <option value="Meals">Meals</option>
+        <option value="Biriyani">Biriyani</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Desserts">Desserts</option>
+        <option value="Starters">Starters</option>
+        <option value="Fast Food">Fast Food</option>
+        <option value="Salads">Salads</option>
+        <option value="Beverages">Beverages</option>
+    </select><br>
+    <label for="item-price">Price:</label>
+    <input type="text" id="item-price" class="input-field" required><br>
+    <span id="priceError" class="error"></span><br>
+    <label for="item-rating">Rating:</label>
+    <input type="text" id="item-rating" class="input-field" required><br>
+    <span id="ratingError" class="error"></span><br>
+    <button type="submit">Add Item</button>
+</form>
+<button type="submit" id="control-btn">Back</button>
+<script src="js/add-item.js"></script>
+</body>
+</html>
